@@ -1,4 +1,3 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Latihan Akuntansi Menengah II</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -414,6 +413,151 @@ const Q = [
     ]}
   ]
 },
+{
+  bab: 9, ref: 'LO 1 · Contoh Soal 9.3 · Biaya peralatan',
+  stem: 'FedEx membeli truk pengiriman listrik seharga $22.000 tunai. Pengeluaran terkait:',
+  facts: [
+    'Pajak penjualan $1.320',
+    'Pengecatan dan pembuatan logo $500',
+    'Lisensi kendaraan (STNK) $80',
+    'Polis asuransi kecelakaan 3 tahun $1.600'
+  ],
+  ask: 'Berapa jumlah yang dicatat pada akun Equipment—Trucks?',
+  options: ['$25.500', '$23.900', '$23.820', '$22.000'],
+  correct: 2,
+  wrong: [
+    '$25.500 memasukkan semua pengeluaran. Lisensi adalah beban rutin dan asuransi 3 tahun adalah dibayar di muka.',
+    '$23.900 memasukkan lisensi $80. Lisensi adalah biaya berulang, bukan biaya membawa truk ke kondisi siap pakai.',
+    null,
+    '$22.000 hanya harga beli. Pajak penjualan dan pengecatan/logo juga diperlukan agar truk siap dipakai.'
+  ],
+  steps: [
+    'Harga perolehan peralatan mencakup harga beli ditambah biaya yang diperlukan agar aset siap dipakai: pajak penjualan dan pengecatan/logo.',
+    'Lisensi adalah biaya rutin untuk mempertahankan operasi, sehingga dibebankan (License Expense).',
+    'Asuransi 3 tahun belum habis terpakai, sehingga dicatat sebagai Prepaid Insurance dan dibebankan bertahap.'
+  ],
+  calc: [
+    ['Harga beli tunai', '$22.000'], ['Pajak penjualan', '$1.320'], ['Pengecatan dan logo', '$500'],
+    ['Equipment—Trucks', '$23.820', 'total']
+  ],
+  journal: [{ title: 'Ayat jurnal pembelian', rows: [
+    ['Equipment—Trucks', '23.820', ''], ['License Expense', '80', ''], ['Prepaid Insurance', '1.600', ''], ['Cash', '', '25.500']
+  ]}]
+},
+{
+  bab: 9, ref: 'LO 1 · Contoh Soal 9.2 · Biaya bangunan',
+  stem: 'Art-in-Bloom membangun museum dengan pengeluaran berikut:',
+  facts: [
+    'Kontraktor bangunan $31.000.000; keamanan tambahan selama konstruksi $80.000',
+    'Penggalian tanah gedung $100.000; izin mendirikan bangunan $20.000',
+    'Tanah taman publik di sebelah museum $150.000 (syarat wajib terbitnya izin)',
+    'Manajer proyek independen pengawas konstruksi $180.000',
+    'Alokasi overhead tim manajemen perusahaan $200.000',
+    'Donasi yang diterima untuk membantu biaya gedung $2.000.000'
+  ],
+  ask: 'Berapa biaya gedung (Buildings) yang dikapitalisasi?',
+  options: ['$29.730.000', '$29.530.000', '$31.730.000', '$31.530.000'],
+  correct: 3,
+  wrong: [
+    '$29.730.000 adalah draf yang keliru: overhead manajemen belum dikeluarkan dan donasi masih dikurangkan.',
+    'Overhead sudah dikeluarkan dengan benar, tetapi donasi tidak boleh dikurangkan dari biaya aset.',
+    'Alokasi overhead manajemen bukan biaya langsung konstruksi dan tidak dapat dihindari, sehingga tidak dikapitalisasi.',
+    null
+  ],
+  steps: [
+    'Kapitalisasi semua biaya langsung konstruksi, termasuk izin, penggalian, keamanan, manajer proyek independen, dan tanah taman yang menjadi syarat izin.',
+    'Alokasi overhead manajemen dikeluarkan karena bukan biaya langsung.',
+    'Donasi tidak mengurangi biaya gedung. Donasi dilaporkan terpisah sebagai pendapatan saat diterima.'
+  ],
+  calc: [
+    ['Kontraktor bangunan', '$31.000.000'], ['Keamanan tambahan', '$80.000'], ['Penggalian tanah gedung', '$100.000'],
+    ['Izin mendirikan bangunan', '$20.000'], ['Tanah taman publik', '$150.000'], ['Manajer proyek independen', '$180.000'],
+    ['Overhead manajemen $200.000 (dikeluarkan)', '$0'], ['Donasi $2.000.000 (tidak dikurangkan)', '$0'],
+    ['Total biaya gedung', '$31.530.000', 'total']
+  ]
+},
+{
+  bab: 9, ref: 'LO 3 · Contoh Soal 3.2 · Pembelian gabungan',
+  stem: 'Norduct Homes membeli sejumlah aset dari Comfort Heating seharga $80.000 tunai dalam satu transaksi. Nilai wajar masing-masing aset:',
+  facts: ['Persediaan $25.000', 'Tanah $25.000', 'Bangunan $50.000'],
+  ask: 'Berapa jumlah yang dicatat untuk Building?',
+  options: ['$40.000', '$50.000', '$26.667', '$55.000'],
+  correct: 0,
+  wrong: [
+    null,
+    '$50.000 adalah nilai wajar bangunan. Aset dicatat sebesar bagian harga bayar ($80.000) menurut proporsi nilai wajar.',
+    'Pembagian rata tiga tidak mencerminkan nilai relatif masing-masing aset.',
+    'Mengurangkan persediaan $25.000 dari harga bayar bukan alokasi proporsional. Seluruh $80.000 dialokasikan menurut relative fair value.'
+  ],
+  steps: [
+    'Pada pembelian gabungan (lump-sum), harga perolehan dialokasikan ke tiap aset berdasarkan relative fair value.',
+    'Total nilai wajar = $100.000. Bangunan = $50.000 / $100.000 × $80.000 = $40.000.'
+  ],
+  calc: [
+    ['Persediaan: 25.000 / 100.000 × 80.000', '$20.000'], ['Tanah: 25.000 / 100.000 × 80.000', '$20.000'],
+    ['Bangunan: 50.000 / 100.000 × 80.000', '$40.000'], ['Total', '$80.000', 'total']
+  ],
+  journal: [{ title: 'Ayat jurnal pembelian', rows: [
+    ['Inventory', '20.000', ''], ['Land', '20.000', ''], ['Building', '40.000', ''], ['Cash', '', '80.000']
+  ]}]
+},
+{
+  bab: 9, ref: 'LO 3 · Contoh Soal 3.3 · Penerbitan saham untuk aset',
+  stem: 'Upgrade Living Co. membeli tanah dengan menerbitkan 5.000 lembar saham biasa bernilai nominal $10 per lembar. Harga pasar saham saat transaksi $12 per lembar.',
+  facts: [],
+  ask: 'Berapa nilai Land dan Share Premium—Ordinary yang dicatat?',
+  options: [
+    'Land $50.000; Share Premium $0',
+    'Land $60.000; Share Premium $2.000',
+    'Land $50.000; Share Premium $10.000',
+    'Land $60.000; Share Premium $10.000'
+  ],
+  correct: 3,
+  wrong: [
+    'Nilai nominal bukan nilai aset. Tanah dicatat sebesar nilai wajar saham yang diserahkan.',
+    'Agio $2 adalah per lembar. Untuk 5.000 lembar, agio = $10.000.',
+    'Jika tanah $50.000, jurnal tidak seimbang dengan modal saham $50.000 ditambah agio $10.000.',
+    null
+  ],
+  steps: [
+    'Aset dicatat pada nilai wajar yang diserahkan: 5.000 × $12 = $60.000.',
+    'Share Capital—Ordinary = 5.000 × $10 = $50.000. Selisih 5.000 × $2 = $10.000 menjadi Share Premium—Ordinary.'
+  ],
+  journal: [{ title: 'Ayat jurnal', rows: [
+    ['Land (5.000 × $12)', '60.000', ''], ['Share Capital—Ordinary (5.000 × $10)', '', '50.000'], ['Share Premium—Ordinary (5.000 × $2)', '', '10.000']
+  ]}]
+},
+{
+  bab: 9, ref: 'LO 4 · Contoh Soal 9.4 · Biaya setelah perolehan',
+  stem: 'Leonard Co. memindahkan fasilitas produksi ke lokasi sementara selama pabrik lama dibongkar dan gedung baru dibangun. Biaya yang timbul:',
+  facts: [
+    'Sewa lokasi sementara $500.000',
+    'Pemindahan mesin $300.000',
+    'Instalasi mesin di lokasi sementara $1.000.000'
+  ],
+  ask: 'Bagaimana perlakuan akuntansi biaya-biaya tersebut?',
+  options: [
+    'Dikapitalisasi ke biaya gedung baru sebesar $1.800.000',
+    'Dibebankan langsung (expensed as incurred) sebesar $1.800.000',
+    'Sewa $500.000 dibebankan; $1.300.000 sisanya dikapitalisasi ke gedung baru',
+    'Ditunda sebagai aset dibayar di muka dan dibebankan setelah gedung selesai'
+  ],
+  correct: 1,
+  wrong: [
+    'Biaya ini tidak menambah nilai atau umur gedung baru, jadi tidak boleh dikapitalisasi ke gedung.',
+    null,
+    'Pemindahan dan instalasi mesin di lokasi sementara juga tidak menambah nilai gedung baru, sehingga seluruhnya dibebankan.',
+    'Biaya ini bukan pembayaran untuk manfaat masa depan, sehingga tidak ditunda sebagai prepaid.'
+  ],
+  steps: [
+    'Biaya setelah perolehan dikapitalisasi hanya jika menambah masa manfaat, kapasitas output, atau kualitas produk.',
+    'Biaya relokasi sementara hanya menjaga operasi tetap berjalan selama konstruksi, sehingga dibebankan saat terjadi.'
+  ],
+  calc: [
+    ['Sewa lokasi sementara', '$500.000'], ['Pemindahan mesin', '$300.000'], ['Instalasi mesin di lokasi sementara', '$1.000.000'],
+    ['Total dibebankan', '$1.800.000', 'total']
+  ]
+},
 /* ---------- BAB 10 ---------- */
 {
   bab: 10, ref: 'LO 1 · Metode saldo menurun ganda (DDB)',
@@ -550,6 +694,135 @@ const Q = [
     ['Unrealized Gain on Revaluation—Land (OCI)', '120.000', ''], ['Loss on Impairment (laba rugi)', '20.000', ''], ['Land', '', '140.000']
   ]}]
 },
+{
+  bab: 10, ref: 'LO 3 · Contoh Soal 3.2 · Impairment (Cruz SA)',
+  stem: 'Cruz SA menguji mesin bernilai tercatat €200.000. Fair value less costs to sell €180.000 dan value-in-use €175.000.',
+  facts: [],
+  ask: 'Berapa rugi penurunan nilai (impairment) yang diakui?',
+  options: ['€0', '€25.000', '€180.000', '€20.000'],
+  correct: 3,
+  wrong: [
+    'Impairment tidak terjadi hanya jika nilai terpulihkan sama dengan atau melebihi nilai tercatat. Di sini lebih rendah.',
+    '€25.000 memakai value-in-use. Nilai terpulihkan adalah yang tertinggi, bukan yang terendah.',
+    '€180.000 adalah nilai terpulihkan, bukan rugi impairment.',
+    null
+  ],
+  steps: [
+    'Nilai terpulihkan = nilai tertinggi antara fair value less costs to sell (€180.000) dan value-in-use (€175.000) = €180.000.',
+    'Nilai tercatat €200.000 melebihi nilai terpulihkan, sehingga terjadi impairment. Rugi = €200.000 − €180.000 = €20.000.',
+    'Bandingkan dengan Kasus A di catatan: jika value-in-use €205.000, nilai terpulihkan €205.000 dan tidak ada impairment.'
+  ],
+  journal: [{ title: 'Ayat jurnal impairment', rows: [
+    ['Loss on Impairment', '20.000', ''], ['Accumulated Depreciation—Equipment', '', '20.000']
+  ]}]
+},
+{
+  bab: 10, ref: 'LO 3 · Pemulihan rugi impairment (model biaya)',
+  stem: 'Sebuah mesin dibeli seharga €100.000 pada awal tahun 1, disusutkan garis lurus 10 tahun tanpa nilai sisa (model biaya). Pada akhir tahun 4 nilai terpulihkan mesin €40.000, sehingga diakui rugi impairment €20.000 dan sisa umur 6 tahun. Pada akhir tahun 6, penyebab penurunan nilai hilang dan nilai terpulihkan menjadi €45.000.',
+  facts: [],
+  ask: 'Berapa pemulihan (reversal) rugi impairment yang boleh diakui pada akhir tahun 6? (dibulatkan)',
+  options: ['€13.333', '€18.333', '€20.000', '€0'],
+  correct: 0,
+  wrong: [
+    null,
+    '€18.333 = €45.000 − €26.667 melebihi batas. Nilai tercatat tidak boleh melampaui nilai yang akan ada tanpa impairment.',
+    '€20.000 adalah rugi awal. Selama 2 tahun mesin sudah disusutkan dari nilai tercatat yang lebih rendah, sehingga pemulihan lebih kecil.',
+    'IFRS membolehkan pemulihan rugi impairment untuk aset selain goodwill jika penyebabnya sudah hilang.'
+  ],
+  steps: [
+    'Setelah impairment, nilai tercatat €40.000 disusutkan selama 6 tahun = €6.667 per tahun. Akhir tahun 6 (2 tahun kemudian): €40.000 − €13.333 = €26.667.',
+    'Batas pemulihan: nilai tercatat tidak boleh melebihi nilai yang seharusnya ada tanpa impairment: €100.000 − (6 × €10.000) = €40.000.',
+    'Nilai terpulihkan €45.000 melebihi batas, jadi dipakai batas €40.000. Pemulihan = €40.000 − €26.667 = €13.333.'
+  ],
+  calc: [
+    ['Nilai tercatat akhir tahun 6 (setelah impairment)', '€26.667'],
+    ['Batas: nilai tercatat tanpa impairment', '€40.000'],
+    ['Nilai terpulihkan', '€45.000'],
+    ['Pemulihan: €40.000 − €26.667', '€13.333', 'total']
+  ],
+  journal: [{ title: 'Ayat jurnal pemulihan', rows: [
+    ['Accumulated Depreciation—Equipment', '13.333', ''], ['Recovery of Impairment Loss', '', '13.333']
+  ]}]
+},
+{
+  bab: 10, ref: 'LO 5 · Kasus 1 · Reversal pada revaluasi tanah (Unilever)',
+  stem: 'Unilever Group membeli tanah seharga €400.000 pada 1 Januari 2025 dan memakai model revaluasi. Nilai wajar: €520.000 (31 Des 2025), €380.000 (31 Des 2026, dengan saldo OCI sudah habis dan rugi impairment €20.000 diakui), dan €415.000 (31 Des 2027).',
+  facts: [],
+  ask: 'Bagaimana kenaikan €35.000 pada 2027 dicatat?',
+  options: [
+    'Seluruh €35.000 dikreditkan ke OCI',
+    'Seluruh €35.000 diakui sebagai pendapatan di laba rugi',
+    '€20.000 pemulihan rugi impairment di laba rugi; €15.000 ke OCI',
+    '€15.000 di laba rugi; €20.000 ke OCI'
+  ],
+  correct: 2,
+  wrong: [
+    'Kenaikan yang memulihkan rugi sebelumnya lebih dulu dikreditkan ke laba rugi.',
+    'Hanya sebesar rugi impairment sebelumnya (€20.000) yang masuk laba rugi. Sisanya ke OCI.',
+    null,
+    'Urutannya terbalik. Pemulihan rugi di laba rugi didahulukan, sisanya ke OCI.'
+  ],
+  steps: [
+    'Kenaikan yang memulihkan rugi impairment sebelumnya dikreditkan ke laba rugi sebesar rugi tersebut (€20.000).',
+    'Sisa kenaikan (€35.000 − €20.000 = €15.000) dicatat ke OCI sebagai surplus revaluasi.'
+  ],
+  journal: [{ title: 'Ayat jurnal 31 Desember 2027', rows: [
+    ['Land', '35.000', ''], ['Recovery of Impairment Loss (laba rugi)', '', '20.000'], ['Unrealized Gain on Revaluation—Land (OCI)', '', '15.000']
+  ]}]
+},
+{
+  bab: 10, ref: 'LO 5 · Kasus 2 · Reversal pada revaluasi peralatan (Nokia)',
+  stem: 'Nokia memakai model revaluasi untuk peralatan seharga €1.000.000 (dibeli 1 Januari 2025, garis lurus 5 tahun, tanpa nilai sisa). Pada akhir 2026, setelah revaluasi ke €570.000, Nokia mengakui rugi impairment €30.000 di laba rugi. Pada akhir 2027 setelah depresiasi €190.000, nilai buku sebelum revaluasi €380.000, dan nilai wajar menjadi €450.000.',
+  facts: [],
+  ask: 'Bagaimana kenaikan €70.000 pada 31 Desember 2027 dicatat?',
+  options: [
+    'Seluruh €70.000 ke OCI',
+    '€30.000 pemulihan rugi impairment di laba rugi; €40.000 ke OCI',
+    'Seluruh €70.000 sebagai pemulihan rugi impairment di laba rugi',
+    '€40.000 di laba rugi; €30.000 ke OCI'
+  ],
+  correct: 1,
+  wrong: [
+    'Sebagian kenaikan memulihkan rugi impairment €30.000 yang sebelumnya diakui di laba rugi.',
+    null,
+    'Pemulihan di laba rugi dibatasi sebesar rugi impairment sebelumnya (€30.000). Sisanya ke OCI.',
+    'Urutannya terbalik. Pemulihan rugi (€30.000) masuk laba rugi, sisanya €40.000 ke OCI.'
+  ],
+  steps: [
+    'Kenaikan = nilai wajar €450.000 − nilai buku €380.000 = €70.000.',
+    'Kenaikan memulihkan rugi impairment lebih dulu (€30.000 ke laba rugi). Sisanya €40.000 dikreditkan ke OCI.'
+  ],
+  journal: [{ title: 'Ayat jurnal revaluasi 31 Desember 2027', rows: [
+    ['Accumulated Depreciation—Equipment', '190.000', ''], ['Equipment', '', '120.000'],
+    ['Recovery of Loss on Impairment (laba rugi)', '', '30.000'], ['Unrealized Gain on Revaluation—Equipment (OCI)', '', '40.000']
+  ]}]
+},
+{
+  bab: 10, ref: 'LO 4 · Contoh Soal 4.1 · Deplesi (MaClede)',
+  stem: 'MaClede SA memperoleh hak tambang perak di Afrika Selatan dengan rincian biaya:',
+  facts: [
+    'Sewa lahan €50.000; biaya eksplorasi €100.000',
+    'Biaya pengembangan tak berwujud €850.000',
+    'Estimasi cadangan perak 100.000 ons; ekstraksi tahun pertama 25.000 ons'
+  ],
+  ask: 'Berapa deplesi tahun pertama?',
+  options: ['€100.000', '€850.000', '€1.000.000', '€250.000'],
+  correct: 3,
+  wrong: [
+    '€100.000 hanya biaya eksplorasi. Basis deplesi mencakup seluruh biaya.',
+    '€850.000 hanya biaya pengembangan. Basis deplesi mencakup seluruh biaya.',
+    '€1.000.000 adalah seluruh basis deplesi, bukan beban tahun pertama. Deplesi dihitung per unit yang diekstraksi.',
+    null
+  ],
+  steps: [
+    'Basis deplesi = €50.000 + €100.000 + €850.000 = €1.000.000.',
+    'Tarif deplesi = €1.000.000 / 100.000 ons = €10 per ons. Deplesi tahun 1 = 25.000 ons × €10 = €250.000.',
+    'Deplesi didebit ke Inventory karena perak yang diekstraksi menjadi persediaan sebelum dijual.'
+  ],
+  journal: [{ title: 'Ayat jurnal deplesi tahun ke-1', rows: [
+    ['Inventory (persediaan perak)', '250.000', ''], ['Accumulated Depletion', '', '250.000']
+  ]}]
+},
 /* ---------- BAB 11 ---------- */
 {
   bab: 11, ref: 'LO 1 · Contoh Soal 11.2 · Amortisasi dengan nilai sisa',
@@ -681,6 +954,116 @@ const Q = [
     'Rugi impairment goodwill tidak boleh dipulihkan di periode berikutnya.'
   ],
   journal: [{ title: 'Ayat jurnal impairment goodwill', rows: [['Loss on Impairment', '500.000', ''], ['Goodwill', '', '500.000']] }]
+},
+{
+  bab: 11, ref: 'LO 2 · Ilustrasi 11.4 · Amortisasi paten (Harcott)',
+  stem: 'Harcott Co. mengeluarkan biaya hukum $180.000 pada 1 Januari 2025 untuk memperoleh paten. Umur hukum paten 20 tahun, sedangkan masa manfaat ekonominya diperkirakan 10 tahun.',
+  facts: [],
+  ask: 'Berapa beban amortisasi paten per tahun?',
+  options: ['$180.000', '$9.000', '$18.000', '$36.000'],
+  correct: 2,
+  wrong: [
+    'Seluruh biaya dialokasikan selama masa manfaat, bukan dibebankan sekaligus di tahun pertama.',
+    '$180.000 / 20 memakai umur hukum. Paten diamortisasi selama umur hukum atau masa manfaat, mana yang lebih pendek.',
+    null,
+    '$36.000 setara masa manfaat 5 tahun. Masa manfaat paten ini 10 tahun.'
+  ],
+  steps: [
+    'Paten diamortisasi selama umur hukum (20 tahun) atau masa manfaat (10 tahun), mana yang lebih pendek, yaitu 10 tahun.',
+    'Amortisasi per tahun = $180.000 / 10 = $18.000. Nilai sisa dianggap nol.'
+  ],
+  journal: [
+    { title: '1 Januari 2025', rows: [['Patents', '180.000', ''], ['Cash', '', '180.000']] },
+    { title: '31 Desember 2025', rows: [['Patent Amortization Expense', '18.000', ''], ['Patents', '', '18.000']] }
+  ]
+},
+{
+  bab: 11, ref: 'LO 4 · Contoh Soal 11.8 · Impairment paten (Lerch)',
+  stem: 'Lerch SE memiliki paten ekstraksi minyak dari batuan serpih dengan nilai tercatat €5.000.000 pada akhir 2024. Teknologi baru membuat permintaan paten anjlok. Tidak ada pasar aktif, dan value-in-use paten diestimasi €2.000.000.',
+  facts: [],
+  ask: 'Berapa rugi penurunan nilai yang diakui?',
+  options: ['€3.000.000', '€2.000.000', '€5.000.000', 'Tidak ada rugi, karena paten tetap diamortisasi'],
+  correct: 0,
+  wrong: [
+    null,
+    '€2.000.000 adalah nilai terpulihkan (value-in-use), yaitu nilai tercatat paten setelah impairment.',
+    '€5.000.000 adalah nilai tercatat sebelum impairment. Rugi hanya selisih dengan nilai terpulihkan.',
+    'Amortisasi tidak menggantikan uji impairment. Nilai tercatat melebihi nilai terpulihkan, sehingga rugi harus diakui.'
+  ],
+  steps: [
+    'Karena tidak ada pasar aktif, nilai terpulihkan = value-in-use = €2.000.000.',
+    'Rugi = nilai tercatat €5.000.000 − nilai terpulihkan €2.000.000 = €3.000.000.',
+    'Nilai tercatat baru €2.000.000 diamortisasi selama sisa masa manfaat (misalnya 5 tahun = €400.000 per tahun).'
+  ],
+  journal: [{ title: 'Ayat jurnal impairment', rows: [['Loss on Impairment', '3.000.000', ''], ['Patents', '', '3.000.000']] }]
+},
+{
+  bab: 11, ref: 'LO 4 · Contoh Soal 11.9 · Reversal impairment paten (Lerch)',
+  stem: 'Lanjutan Lerch SE. Setelah impairment, paten bernilai €2.000.000 dan diamortisasi €400.000 pada 2025 (sisa 4 tahun), sehingga nilai tercatat awal 2026 €1.600.000. Pada awal 2026 kondisi pasar membaik dan nilai terpulihkan paten diukur ulang sebesar €1.750.000.',
+  facts: [],
+  ask: 'Berapa pemulihan rugi impairment dan amortisasi 2026?',
+  options: [
+    'Pemulihan €150.000; amortisasi 2026 €400.000',
+    'Pemulihan €1.750.000; amortisasi 2026 €437.500',
+    'Pemulihan €150.000; amortisasi 2026 €350.000',
+    'Pemulihan €150.000; amortisasi 2026 €437.500'
+  ],
+  correct: 3,
+  wrong: [
+    'Setelah pemulihan nilai tercatat menjadi €1.750.000, jadi amortisasi harus dihitung ulang dari angka itu.',
+    'Pemulihan hanya selisih nilai terpulihkan dan nilai tercatat saat ini, bukan seluruh nilai terpulihkan.',
+    'Sisa masa manfaat 4 tahun, bukan 5. €1.750.000 / 5 salah.',
+    null
+  ],
+  steps: [
+    'Pemulihan = nilai terpulihkan €1.750.000 − nilai tercatat €1.600.000 = €150.000, dikreditkan ke laba rugi.',
+    'Nilai tercatat setelah pemulihan = €1.750.000. Amortisasi 2026 = €1.750.000 / 4 sisa tahun = €437.500.',
+    'Batas: nilai tercatat setelah pemulihan tidak boleh melebihi nilai yang akan ada seandainya impairment tidak pernah diakui.'
+  ],
+  journal: [{ title: 'Ayat jurnal pemulihan', rows: [['Patents', '150.000', ''], ['Recovery of Impairment Loss', '', '150.000']] }]
+},
+{
+  bab: 11, ref: 'LO 4 · Contoh Soal 11.10 · Impairment lisensi (Arcon Radio)',
+  stem: 'Arcon Radio memiliki lisensi penyiaran seharga €2.000.000 yang dicatat sebagai aset umur tidak terbatas (tidak diamortisasi). Pemerintah mengumumkan lisensi akan dilelang ulang, bukan diperpanjang otomatis. Berdasarkan lelang lisensi serupa, fair value less costs to sell lisensi Arcon diperkirakan €1.500.000.',
+  facts: [],
+  ask: 'Berapa rugi penurunan nilai yang dilaporkan Arcon?',
+  options: ['€0', '€500.000', '€1.500.000', '€2.000.000'],
+  correct: 1,
+  wrong: [
+    'Aset umur tidak terbatas tidak diamortisasi, tetapi tetap diuji impairment. Nilai terpulihkan di sini lebih rendah dari nilai tercatat.',
+    null,
+    '€1.500.000 adalah nilai terpulihkan, bukan rugi.',
+    '€2.000.000 adalah nilai tercatat lisensi sebelum impairment.'
+  ],
+  steps: [
+    'Aset tak berwujud umur tidak terbatas wajib diuji impairment minimal sekali setahun.',
+    'Nilai terpulihkan = €1.500.000. Rugi = €2.000.000 − €1.500.000 = €500.000.'
+  ],
+  journal: [{ title: 'Ayat jurnal impairment', rows: [['Loss on Impairment', '500.000', ''], ['Licenses', '', '500.000']] }]
+},
+{
+  bab: 11, ref: 'LO 2 · Contoh Soal 11.3 · Merek dagang umur tidak terbatas',
+  stem: 'Hatley Company membeli merek dagang seharga $3.000.000. Sisa umur hukumnya 8 tahun dan dapat diperpanjang setiap 10 tahun dengan biaya minimal. Studi internal menunjukkan merek ini memberikan arus kas masuk substansial tanpa batas waktu.',
+  facts: [],
+  ask: 'Bagaimana perlakuan akuntansi merek dagang tersebut?',
+  options: [
+    'Tidak diamortisasi; diuji impairment minimal setahun sekali',
+    'Diamortisasi selama sisa umur hukum 8 tahun',
+    'Diamortisasi selama 10 tahun mengikuti periode perpanjangan',
+    'Tidak diamortisasi dan tidak perlu diuji impairment'
+  ],
+  correct: 0,
+  wrong: [
+    null,
+    'Karena dapat diperpanjang dengan biaya minimal dan arus kas tanpa batas, merek ini berumur tidak terbatas.',
+    'Periode perpanjangan bukan masa manfaat. Aset umur tidak terbatas tidak diamortisasi.',
+    'Aset umur tidak terbatas wajib diuji impairment minimal sekali setahun.'
+  ],
+  steps: [
+    'Merek dapat diperpanjang dengan biaya murah dan arus kas diperkirakan berlanjut tanpa batas, sehingga berumur tidak terbatas (indefinite life).',
+    'Aset umur tidak terbatas tidak diamortisasi, tetapi wajib diuji impairment minimal sekali setahun. Pada tahun pertama hanya ada jurnal pembelian.'
+  ],
+  journal: [{ title: 'Ayat jurnal pembelian', rows: [['Trademarks', '3.000.000', ''], ['Cash', '', '3.000.000']] }]
 },
 /* ---------- BAB 12 ---------- */
 {
@@ -815,11 +1198,122 @@ const Q = [
     'Kemungkinan kalah kurang dari 50% berarti arus keluar tidak probabel, sehingga tidak ada provisi.',
     'Kasus ini cukup diungkapkan sebagai liabilitas kontinjensi dalam catatan atas laporan keuangan.'
   ]
+},
+{
+  bab: 12, ref: 'LO 2 · Contoh Soal 12.8 · Penukaran kupon hadiah (Fluffy)',
+  stem: 'Fluffy Cake Mix Ltd menjual adonan kue £3 per kotak. Pelanggan dapat menukar 10 penutup kotak (box tops) ditambah £1 dengan satu mangkuk, yang dibeli Fluffy £2 per unit. Pada 2025 Fluffy menjual 300.000 kotak dan pelanggan menukarkan 60.000 penutup kotak.',
+  facts: [],
+  ask: 'Berapa beban premi bersih dari penukaran aktual 60.000 penutup kotak?',
+  options: ['£12.000', '£120.000', '£6.000', '£18.000'],
+  correct: 2,
+  wrong: [
+    '£12.000 adalah biaya mangkuk yang dikeluarkan (6.000 × £2). Kas £6.000 dari pelanggan harus dikurangkan.',
+    '£120.000 memakai satu mangkuk per penutup kotak. Seharusnya 10 penutup kotak per mangkuk.',
+    null,
+    '£18.000 adalah estimasi total beban premi bersih untuk seluruh penukaran yang diharapkan, bukan penukaran aktual.'
+  ],
+  steps: [
+    'Mangkuk yang ditukar = 60.000 / 10 = 6.000 unit.',
+    'Kas diterima = 6.000 × £1 = £6.000. Persediaan mangkuk keluar = 6.000 × £2 = £12.000.',
+    'Beban premi bersih = £12.000 − £6.000 = £6.000.'
+  ],
+  journal: [{ title: 'Ayat jurnal penukaran aktual', rows: [
+    ['Cash', '6.000', ''], ['Premium Expense', '6.000', ''], ['Inventory of Premiums', '', '12.000']
+  ]}]
+},
+{
+  bab: 12, ref: 'LO 2 · Contoh Soal 12.8 · Provisi utang premi (Fluffy)',
+  stem: 'Lanjutan Fluffy Cake Mix Ltd. Fluffy mengestimasi 60% penutup kotak dari 300.000 kotak yang terjual akan ditukar (10 penutup + £1 per mangkuk, biaya mangkuk £2). Beban premi bersih yang sudah diakui dari penukaran aktual selama 2025 adalah £6.000.',
+  facts: [],
+  ask: 'Berapa saldo Premium Liability pada 31 Desember 2025?',
+  options: ['£18.000', '£12.000', '£6.000', '£36.000'],
+  correct: 1,
+  wrong: [
+    '£18.000 adalah total estimasi beban premi bersih. Bagian £6.000 sudah diakui sebagai beban.',
+    null,
+    '£6.000 adalah beban yang sudah diakui dari penukaran aktual, bukan sisa kewajiban.',
+    '£36.000 memakai biaya mangkuk £2 tanpa mengurangi kas £1 yang diterima dari pelanggan.'
+  ],
+  steps: [
+    'Penutup kotak yang diperkirakan ditukar = 300.000 × 60% = 180.000, atau 18.000 mangkuk.',
+    'Estimasi beban premi bersih = 18.000 × (£2 − £1) = £18.000.',
+    'Provisi = £18.000 − £6.000 yang sudah diakui = £12.000, dicatat sebagai Premium Liability.'
+  ],
+  journal: [{ title: 'Jurnal penyesuaian 31 Desember 2025', rows: [
+    ['Premium Expense', '12.000', ''], ['Premium Liability', '', '12.000']
+  ]}]
+},
+{
+  bab: 12, ref: 'LO 2 · Provisi kontrak memberatkan (Sumart Sports)',
+  stem: 'Sumart Sports memindahkan operasi ke lokasi baru, tetapi sewa pabrik lama masih tersisa 3 tahun. Pabrik tidak dapat disewakan kembali. Biaya memenuhi kontrak sewa €200.000, sedangkan Sumart dapat keluar dari kontrak dengan membayar denda pembatalan €175.000.',
+  facts: [],
+  ask: 'Berapa Lease Contract Liability yang diakui?',
+  options: ['€200.000', '€375.000', '€175.000', '€0, cukup diungkapkan di catatan'],
+  correct: 2,
+  wrong: [
+    '€200.000 adalah biaya memenuhi kontrak. Provisi dicatat sebesar biaya bersih terendah untuk keluar dari kontrak.',
+    '€375.000 menjumlahkan dua alternatif yang saling menggantikan. Hanya satu yang dipilih.',
+    null,
+    'Kontrak memberatkan menimbulkan kewajiban kini yang probabel dan terukur, sehingga provisi wajib diakui.'
+  ],
+  steps: [
+    'Pada kontrak memberatkan, biaya tak terhindarkan melebihi manfaat yang akan diterima, sehingga provisi diakui.',
+    'Provisi diukur sebesar biaya bersih terendah untuk keluar dari kontrak: denda €175.000 lebih rendah dari €200.000.'
+  ],
+  journal: [{ title: 'Ayat jurnal', rows: [['Loss on Lease Contract', '175.000', ''], ['Lease Contract Liability', '', '175.000']] }]
+},
+{
+  bab: 12, ref: 'LO 1 · Hak cuti berbayar (Amutron NV)',
+  stem: 'Amutron NV memiliki 10 karyawan bergaji €480 per minggu. Sepanjang 2025 terdapat 20 minggu hak cuti yang belum digunakan dan sudah diakrualkan. Pada 2026 cuti tersebut diambil saat tarif gaji naik menjadi €540 per minggu.',
+  facts: [],
+  ask: 'Berapa beban gaji tambahan yang diakui pada 2026 saat cuti diambil?',
+  options: ['€10.800', '€9.600', '€20.400', '€1.200'],
+  correct: 3,
+  wrong: [
+    '€10.800 adalah total kas yang dibayar pada 2026. Sebagian besar sudah dibebankan di 2025 melalui akrual.',
+    '€9.600 adalah akrual 2025 (20 × €480), sudah menjadi beban tahun 2025.',
+    '€20.400 menjumlahkan akrual dan pembayaran sehingga menghitung dua kali.',
+    null
+  ],
+  steps: [
+    'Akrual 31 Desember 2025 = 20 × €480 = €9.600 (beban 2025).',
+    'Pembayaran 2026 = 20 × €540 = €10.800. Selisih €10.800 − €9.600 = €1.200 menjadi beban 2026.'
+  ],
+  journal: [{ title: 'Ayat jurnal 2026', rows: [
+    ['Salaries and Wages Payable', '9.600', ''], ['Salaries and Wages Expense', '1.200', ''], ['Cash', '', '10.800']
+  ]}]
+},
+{
+  bab: 12, ref: 'LO 2 · Contoh Soal 12.7 · Garansi tipe jasa (Hamlin Auto)',
+  stem: 'Pada 2 Januari 2025 Hamlin Auto menjual mobil €30.000. Pelanggan juga membeli garansi tipe jasa (extended warranty) 3 tahun untuk periode 2028-2030 seharga €900, di luar garansi tipe jaminan.',
+  facts: [],
+  ask: 'Bagaimana perlakuan akuntansi €900 tersebut?',
+  options: [
+    'Dicatat sebagai Unearned Warranty Revenue, lalu diakui €300 per tahun pada 2028, 2029, dan 2030',
+    'Seluruh €900 diakui sebagai pendapatan pada 2 Januari 2025',
+    '€300 diakui per tahun pada 2025, 2026, dan 2027',
+    'Seluruh €900 diakui sekaligus pada 31 Desember 2028'
+  ],
+  correct: 0,
+  wrong: [
+    null,
+    'Garansi tipe jasa dijual terpisah dan layanannya diberikan di masa depan, sehingga pendapatan belum dapat diakui.',
+    'Pendapatan diakui selama masa garansi tambahan (2028-2030), bukan sejak tanggal penjualan.',
+    'Pendapatan diakui garis lurus selama masa garansi, bukan sekaligus di tahun pertama garansi.'
+  ],
+  steps: [
+    'Garansi tipe jasa adalah garansi tambahan yang dijual terpisah. Penerimaan kas dicatat sebagai Unearned Warranty Revenue.',
+    'Pendapatan diakui garis lurus selama masa garansi: €900 / 3 = €300 per tahun pada 2028, 2029, dan 2030.'
+  ],
+  journal: [
+    { title: '2 Januari 2025', rows: [['Cash (€30.000 + €900)', '30.900', ''], ['Sales Revenue', '', '30.000'], ['Unearned Warranty Revenue', '', '900']] },
+    { title: '31 Desember 2028', rows: [['Unearned Warranty Revenue', '300', ''], ['Warranty Revenue', '', '300']] }
+  ]
 }
 ]; /*END_Q*/
 
 /* ===== STATE ===== */
-const KEY = 'akm2-latihan-bab9-12-v1';
+const KEY = 'akm2-latihan-bab9-12-v2';
 const N = Q.length;
 let state = { phase: 'intro', idx: 0, answers: Array(N).fill(null), confirm: false, filter: 'all' };
 
@@ -883,7 +1377,7 @@ function renderIntro() {
     '<div style="display:grid;gap:12px">' +
       '<p class="eyebrow">Latihan soal · IFRS</p>' +
       '<h1>Latihan Akuntansi Keuangan Menengah II</h1>' +
-      '<p class="lede">20 soal pilihan ganda dari catatan Bab 9 sampai 12. Kerjakan semuanya dulu; benar atau salah dan pembahasan lengkap baru muncul setelah jawaban dikumpulkan.</p>' +
+      '<p class="lede">' + N + ' soal pilihan ganda dari catatan Bab 9 sampai 12. Kerjakan semuanya dulu; benar atau salah dan pembahasan lengkap baru muncul setelah jawaban dikumpulkan.</p>' +
     '</div>' +
     '<div class="card table-scroll"><table class="ledger"><thead><tr><th>Bab</th><th>Topik</th><th class="num">Soal</th></tr></thead><tbody>' + rows +
       '<tr><td></td><td>Total</td><td class="num mono">' + N + '</td></tr></tbody></table></div>' +
@@ -1055,5 +1549,3 @@ app.addEventListener('click', e => {
 load();
 render();
 </script>
-
-</body></html>
