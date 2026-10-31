@@ -1,0 +1,1059 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Latihan Akuntansi Menengah II</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<style>
+/* Layout: satu kolom kerja, soal di kiri dan navigator buku besar di kanan; hasil berupa ringkasan skor lalu lembar pembahasan. */
+:root {
+  --bg: #EDF0F4;
+  --surface: #FFFFFF;
+  --surface-2: #F5F7FA;
+  --fg: #142230;
+  --muted: #566677;
+  --line: #D3DAE2;
+  --line-strong: #B4BFCB;
+  --accent: #1D4E9E;
+  --accent-fg: #FFFFFF;
+  --accent-soft: #E2EBF8;
+  --good: #17714A;
+  --good-soft: #E0F2E9;
+  --bad: #B02F28;
+  --bad-soft: #FBE7E5;
+  --warn: #85560A;
+  --warn-soft: #FBF0D6;
+  --shadow: 0 1px 2px rgba(20,34,48,.06), 0 8px 24px rgba(20,34,48,.05);
+  --font-display: 'IBM Plex Serif', Georgia, 'Times New Roman', serif;
+  --font-body: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E151D; --surface: #16202B; --surface-2: #1B2733; --fg: #E4EBF2; --muted: #92A3B4;
+    --line: #273544; --line-strong: #3A4A5B; --accent: #7DAEF0; --accent-fg: #0E151D; --accent-soft: #1D2E45;
+    --good: #5CC48C; --good-soft: #15291F; --bad: #F2837B; --bad-soft: #331B1A; --warn: #E3B25A; --warn-soft: #2D2412;
+    --shadow: 0 1px 0 rgba(255,255,255,.03);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E151D; --surface: #16202B; --surface-2: #1B2733; --fg: #E4EBF2; --muted: #92A3B4;
+  --line: #273544; --line-strong: #3A4A5B; --accent: #7DAEF0; --accent-fg: #0E151D; --accent-soft: #1D2E45;
+  --good: #5CC48C; --good-soft: #15291F; --bad: #F2837B; --bad-soft: #331B1A; --warn: #E3B25A; --warn-soft: #2D2412;
+  --shadow: 0 1px 0 rgba(255,255,255,.03);
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--surface);
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.25; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+button { font: inherit; color: inherit; }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+.pad {
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: var(--surface); border-bottom: 1px solid var(--line);
+}
+.top-in {
+  max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; min-height: 56px;
+}
+.brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.brand-mark {
+  font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: .02em;
+  border: 1px solid var(--line-strong); border-radius: 4px; padding: 2px 6px; color: var(--accent);
+  white-space: nowrap;
+}
+.brand-text { font-weight: 600; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.brand-sub { color: var(--muted); font-size: 13px; }
+.theme-btn {
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+  background: var(--surface-2); border: 1px solid var(--line); border-radius: 6px;
+  padding: 7px 12px; font-size: 14px; font-weight: 500; white-space: nowrap;
+}
+.theme-btn:hover { border-color: var(--line-strong); }
+.theme-btn svg { width: 18px; height: 18px; flex: none; }
+
+.wrap { max-width: 1080px; margin: 0 auto; padding-block: 28px 56px; }
+
+/* tombol */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer;
+  border-radius: 6px; padding: 10px 18px; font-weight: 600; font-size: 15px; border: 1px solid transparent;
+  background: var(--accent); color: var(--accent-fg); min-height: 44px;
+}
+.btn:hover { filter: brightness(1.08); }
+.btn.ghost { background: var(--surface); color: var(--fg); border-color: var(--line-strong); }
+.btn.ghost:hover { background: var(--surface-2); filter: none; }
+.btn[disabled] { opacity: .45; cursor: not-allowed; filter: none; }
+:focus-visible, .opt:has(input:focus-visible), .nav-cell:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* kartu */
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
+
+/* intro */
+.intro { max-width: 760px; margin: 0 auto; display: grid; gap: 24px; }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.intro h1 { font-size: clamp(28px, 5vw, 40px); }
+.lede { color: var(--muted); font-size: 17px; max-width: 60ch; }
+.ledger { width: 100%; border-collapse: collapse; }
+.ledger th, .ledger td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.ledger th { font-size: 12px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); background: var(--surface-2); }
+.ledger td.num, .ledger th.num { text-align: right; }
+.ledger tr:last-child td { border-bottom: 3px double var(--line-strong); font-weight: 600; }
+.ledger .bab { font-family: var(--font-mono); white-space: nowrap; color: var(--accent); font-weight: 500; }
+.rules { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.rules li { display: flex; gap: 12px; align-items: baseline; }
+.rules .k { font-family: var(--font-mono); font-size: 12px; color: var(--accent); border: 1px solid var(--line-strong); border-radius: 4px; padding: 1px 6px; flex: none; }
+.src { color: var(--muted); font-size: 13px; }
+.table-scroll { overflow-x: auto; }
+
+/* kuis */
+.quiz { display: grid; grid-template-columns: minmax(0, 1fr) 270px; gap: 24px; align-items: start; }
+.q-card { padding: 24px; display: grid; gap: 18px; min-width: 0; }
+.q-meta { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; color: var(--muted); font-size: 13px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; letter-spacing: .02em;
+  padding: 2px 9px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); white-space: nowrap;
+}
+.chip.ok { background: var(--good-soft); color: var(--good); }
+.chip.bad { background: var(--bad-soft); color: var(--bad); }
+.chip.blank { background: var(--warn-soft); color: var(--warn); }
+.q-no { font-family: var(--font-mono); font-weight: 500; color: var(--fg); }
+.stem { font-size: 17px; }
+.ask { font-size: 17px; font-weight: 600; }
+.facts { margin: 0; padding: 12px 16px 12px 34px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 8px; display: grid; gap: 4px; font-size: 15px; }
+.opts { display: grid; gap: 10px; border: 0; margin: 0; padding: 0; min-width: 0; }
+.opt {
+  position: relative; display: flex; gap: 12px; align-items: flex-start; cursor: pointer;
+  padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface);
+}
+.opt:hover { border-color: var(--line-strong); background: var(--surface-2); }
+.opt input { position: absolute; opacity: 0; pointer-events: none; }
+.opt:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.letter {
+  flex: none; width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--line-strong);
+  display: grid; place-items: center; font-family: var(--font-mono); font-size: 13px; font-weight: 500; background: var(--surface);
+}
+.opt:has(input:checked) .letter { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+.opt-text { padding-top: 2px; min-width: 0; overflow-wrap: anywhere; }
+.q-nav { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 6px; }
+
+.aside { position: sticky; top: calc(72px + env(safe-area-inset-top, 0px)); padding: 18px; display: grid; gap: 16px; }
+.prog-label { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+.bar { height: 6px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 99px; overflow: hidden; }
+.bar > i { display: block; height: 100%; background: var(--accent); }
+.nav-group { display: grid; gap: 6px; }
+.nav-group h3 { font-family: var(--font-body); font-size: 12px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.nav-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.nav-cell {
+  min-height: 40px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); cursor: pointer;
+  font-family: var(--font-mono); font-size: 14px; font-variant-numeric: tabular-nums;
+}
+.nav-cell:hover { border-color: var(--line-strong); }
+.nav-cell.done { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+.nav-cell.cur { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+
+.confirm { padding: 28px; display: grid; gap: 16px; }
+.confirm .list { display: flex; flex-wrap: wrap; gap: 8px; }
+.confirm .row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* hasil */
+.result { display: grid; gap: 24px; }
+.score-card { padding: 28px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 28px; align-items: center; }
+.score { font-family: var(--font-mono); font-size: clamp(48px, 9vw, 72px); font-weight: 500; line-height: 1; letter-spacing: -.02em; }
+.score small { font-size: .38em; color: var(--muted); font-weight: 400; letter-spacing: 0; }
+.score-meta { display: grid; gap: 6px; min-width: 0; }
+.score-meta h2 { font-size: 24px; }
+.breakdown { display: grid; gap: 12px; padding: 22px 24px; }
+.bd-row { display: grid; grid-template-columns: minmax(0, 190px) minmax(0, 1fr) 44px; gap: 14px; align-items: center; font-size: 15px; }
+.bd-row .val { font-family: var(--font-mono); text-align: right; font-size: 14px; }
+.bd-row .bar { height: 10px; }
+.bd-row .bar > i { background: var(--good); }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; }
+.seg { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 6px; overflow: hidden; background: var(--surface); }
+.seg button { border: 0; background: transparent; padding: 8px 14px; cursor: pointer; font-size: 14px; font-weight: 500; min-height: 40px; }
+.seg button + button { border-left: 1px solid var(--line-strong); }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-fg); }
+.review { display: grid; gap: 18px; }
+.r-item { padding: 24px; display: grid; gap: 16px; min-width: 0; }
+.r-head { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; justify-content: space-between; }
+.r-head .left { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; color: var(--muted); font-size: 13px; }
+.ropts { display: grid; gap: 8px; }
+.ropt { display: flex; gap: 12px; align-items: flex-start; padding: 10px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+.ropt .body { min-width: 0; display: grid; gap: 4px; flex: 1; }
+.ropt .note { font-size: 14px; color: var(--muted); }
+.ropt .tag { font-size: 12px; font-weight: 600; }
+.ropt.is-correct { border-color: var(--good); background: var(--good-soft); }
+.ropt.is-correct .letter { background: var(--good); border-color: var(--good); color: var(--surface); }
+.ropt.is-correct .tag { color: var(--good); }
+.ropt.is-wrong { border-color: var(--bad); background: var(--bad-soft); }
+.ropt.is-wrong .letter { background: var(--bad); border-color: var(--bad); color: var(--surface); }
+.ropt.is-wrong .tag { color: var(--bad); }
+.sol { border-top: 1px dashed var(--line-strong); padding-top: 16px; display: grid; gap: 14px; }
+.sol h3 { font-family: var(--font-body); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.sol ol { margin: 0; padding-left: 22px; display: grid; gap: 6px; }
+table.calc, table.journal { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+table.calc td, table.journal td, table.journal th { padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.calc td:last-child { text-align: right; font-family: var(--font-mono); white-space: nowrap; font-variant-numeric: tabular-nums; }
+table.calc tr.total td { font-weight: 600; border-top: 1px solid var(--line-strong); border-bottom: 3px double var(--line-strong); }
+table.journal th { text-align: left; font-size: 12px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); background: var(--surface-2); }
+table.journal th.num, table.journal td.num { text-align: right; font-family: var(--font-mono); white-space: nowrap; font-variant-numeric: tabular-nums; }
+table.journal td.cr { padding-left: 32px; }
+.jr-title { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+.again { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; padding-top: 8px; }
+
+@media (max-width: 860px) {
+  .quiz { grid-template-columns: minmax(0, 1fr); }
+  .aside { position: static; }
+  .score-card { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .bd-row { grid-template-columns: minmax(0, 1fr) 44px; }
+  .bd-row .bar { grid-column: 1 / -1; grid-row: 2; }
+}
+@media (max-width: 520px) {
+  .q-card, .r-item, .confirm, .score-card, .breakdown { padding: 18px; }
+  .theme-btn .t-label { display: none; }
+  .brand-sub { display: none; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bar > i { transition: width .25s ease; }
+}
+</style>
+
+<header class="top pad">
+  <div class="top-in">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">Dr / Cr</span>
+      <span class="brand-text">Akuntansi Menengah II</span>
+      <span class="brand-sub">· Bab 9-12 IFRS</span>
+    </div>
+    <button class="theme-btn" id="theme" type="button" aria-label="Ganti tema"></button>
+  </div>
+</header>
+<main class="wrap pad" id="app" aria-live="polite"></main>
+
+<script>
+/* ===== DATA SOAL ===== */
+const BAB = {
+  9:  'Bab 9 · Aset tetap',
+  10: 'Bab 10 · Depresiasi dan impairment',
+  11: 'Bab 11 · Aset tak berwujud',
+  12: 'Bab 12 · Liabilitas, provisi, kontinjensi'
+};
+const Q = [
+/* ---------- BAB 9 ---------- */
+{
+  bab: 9, ref: 'LO 1 · Contoh Soal 9.1',
+  stem: 'Tesla membeli lahan untuk pabrik dengan pengeluaran berikut:',
+  facts: [
+    'Harga beli tunai $2.000.000',
+    'Menanggung tunggakan pajak properti $42.000 dan pinjaman hipotek $210.000',
+    'Retribusi kota untuk saluran air, trotoar, dan jalan $38.000',
+    'Komisi broker $120.000; biaya pencarian dan balik nama sertifikat $4.000',
+    'Pembongkaran gudang tua $10.000, dengan hasil penjualan sisa material $1.000',
+    'Survei dan perataan tanah $30.000',
+    'Lanskap dengan masa manfaat 20 tahun $101.000'
+  ],
+  ask: 'Berapa jumlah yang dicatat pada akun Land?',
+  options: ['$2.554.000', '$2.453.000', '$2.201.000', '$2.454.000'],
+  correct: 1,
+  wrong: [
+    'Ini jumlah Land ditambah lanskap $101.000. Lanskap berumur terbatas, jadi masuk Land Improvements.',
+    null,
+    'Pajak tertunggak dan hipotek ($252.000) ditanggung pembeli, sehingga ikut menjadi biaya tanah.',
+    'Hasil penjualan sisa material $1.000 belum dikurangkan dari biaya tanah.'
+  ],
+  steps: [
+    'Biaya tanah mencakup semua pengeluaran untuk memperoleh dan menyiapkan tanah, termasuk utang pajak dan hipotek yang ditanggung pembeli.',
+    'Hasil penjualan sisa material pembongkaran mengurangi biaya tanah.',
+    'Lanskap berumur 20 tahun dicatat di Land Improvements karena harus disusutkan, sedangkan tanah tidak.'
+  ],
+  calc: [
+    ['Harga beli tunai', '$2.000.000'], ['Pajak properti tertunggak', '$42.000'], ['Hipotek yang ditanggung', '$210.000'],
+    ['Retribusi kota', '$38.000'], ['Komisi broker', '$120.000'], ['Balik nama sertifikat', '$4.000'],
+    ['Pembongkaran gudang tua', '$10.000'], ['Penjualan sisa material', '($1.000)'], ['Survei dan perataan', '$30.000'],
+    ['Total Land', '$2.453.000', 'total']
+  ],
+  journal: [{ title: 'Ayat jurnal pembelian', rows: [
+    ['Land', '2.453.000', ''], ['Land Improvements', '101.000', ''], ['Cash', '', '2.554.000']
+  ]}]
+},
+{
+  bab: 9, ref: 'LO 2 · Kapitalisasi biaya pinjaman (Skenario B)',
+  stem: 'Pada 2025 Shalla Co. membangun gedung tanpa utang khusus proyek. Pengeluaran proyek dan utang umum perusahaan:',
+  facts: [
+    'Pengeluaran: 1 Jan $210.000; 1 Mar $300.000; 1 Mei $540.000; 31 Des $450.000',
+    'Wesel bayar 10%, $1.000.000',
+    'Obligasi 12%, $1.500.000'
+  ],
+  ask: 'Berapa bunga yang dikapitalisasi pada 2025?',
+  options: ['$82.000', '$168.000', '$280.000', '$91.840'],
+  correct: 3,
+  wrong: [
+    'Tarif 10% hanya tarif wesel. Capitalization rate harus rata-rata tertimbang seluruh utang umum, yaitu 11,2%.',
+    '$168.000 = $1.500.000 × 11,2%. Ini memakai total pengeluaran tanpa pembobotan waktu; yang dipakai WAAE $820.000.',
+    'Ini bunga aktual seluruh utang umum. Yang dikapitalisasi adalah yang lebih rendah antara bunga aktual dan bunga yang dapat dihindari.',
+    null
+  ],
+  steps: [
+    'Hitung WAAE (rata-rata tertimbang akumulasi pengeluaran): tiap pengeluaran dikali lama pemakaiannya selama 2025.',
+    'Hitung capitalization rate dari utang umum, tertimbang menurut porsi tiap utang.',
+    'Bunga yang dapat dihindari = WAAE × rate. Dikapitalisasi adalah nilai yang lebih rendah antara bunga ini dan bunga aktual.'
+  ],
+  calc: [
+    ['1 Jan: $210.000 × 12/12', '$210.000'], ['1 Mar: $300.000 × 10/12', '$250.000'],
+    ['1 Mei: $540.000 × 8/12', '$360.000'], ['31 Des: $450.000 × 0/12', '$0'],
+    ['WAAE', '$820.000', 'total'],
+    ['Rate: 10% × 40% + 12% × 60%', '11,2%'],
+    ['Bunga dapat dihindari: $820.000 × 11,2%', '$91.840'],
+    ['Bunga aktual: $100.000 + $180.000', '$280.000'],
+    ['Dikapitalisasi (yang lebih rendah)', '$91.840', 'total']
+  ]
+},
+{
+  bab: 9, ref: 'LO 3 · Contoh Soal 3.6 · Pertukaran aset',
+  stem: 'Interstate Transportation Co. menukar truk lama dengan truk semi baru. Data transaksi:',
+  facts: [
+    'Truk lama: harga perolehan $64.000, akumulasi penyusutan $22.000',
+    'Nilai wajar truk lama $49.000; kas tambahan yang dibayar $11.000',
+    'Nilai wajar truk baru $60.000',
+    'Transaksi TIDAK memiliki substansi komersial'
+  ],
+  ask: 'Berapa biaya truk baru, dan bagaimana laba atas pelepasan truk lama?',
+  options: [
+    'Biaya $53.000; laba $7.000 tidak diakui (ditangguhkan)',
+    'Biaya $60.000; laba $7.000 diakui sekarang',
+    'Biaya $53.000; laba $7.000 diakui sekarang',
+    'Biaya $60.000; tidak ada laba diakui'
+  ],
+  correct: 0,
+  wrong: [
+    null,
+    'Ini perlakuan jika ada substansi komersial: aset baru pada nilai wajar dan laba diakui.',
+    'Biaya $53.000 benar, tetapi laba tidak diakui sekarang. Laba terealisasi lewat penyusutan yang lebih kecil.',
+    'Jika laba tidak diakui, biaya aset baru dikurangi laba yang ditangguhkan, jadi bukan $60.000.'
+  ],
+  steps: [
+    'Nilai buku truk lama = $64.000 − $22.000 = $42.000. Laba potensial = $49.000 − $42.000 = $7.000.',
+    'Tanpa substansi komersial, laba tidak diakui. Laba ditangguhkan dengan mengurangi biaya aset baru.',
+    'Biaya truk baru = $60.000 − $7.000 = $53.000. Hasil yang sama: nilai buku lama $42.000 + kas $11.000.'
+  ],
+  journal: [{ title: 'Ayat jurnal pertukaran', rows: [
+    ['Truck (semi baru)', '53.000', ''], ['Accumulated Depreciation—Trucks', '22.000', ''],
+    ['Trucks (tua)', '', '64.000'], ['Cash', '', '11.000']
+  ]}]
+},
+{
+  bab: 9, ref: 'LO 3 · Contoh Soal 3.1 · Wesel tanpa bunga',
+  stem: 'Sutter AG membeli robot semprot dengan menerbitkan wesel tanpa bunga bernilai nominal €100.000, berjangka 5 tahun, diangsur €20.000 setiap akhir tahun. Suku bunga pasar 10% dan PVF anuitas biasa (n = 5, i = 10%) = 3,79079.',
+  facts: [],
+  ask: 'Berapa nilai peralatan yang dicatat dan beban bunga tahun pertama?',
+  options: [
+    'Peralatan €100.000; beban bunga €10.000',
+    'Peralatan €100.000; beban bunga €7.582',
+    'Peralatan €75.816; beban bunga €7.582',
+    'Peralatan €75.816; beban bunga €12.418'
+  ],
+  correct: 2,
+  wrong: [
+    'Wesel tanpa bunga tidak dicatat sebesar nominal. Aset dicatat pada nilai sekarang angsurannya.',
+    'Beban bunga benar, tetapi aset harus dicatat pada nilai sekarang (€75.816), bukan nominal.',
+    null,
+    '€12.418 adalah bagian pokok yang dilunasi pada tahun 1, bukan beban bunga.'
+  ],
+  steps: [
+    'Karena wesel tanpa bunga, harga aset = nilai sekarang angsuran: €20.000 × 3,79079 = €75.816.',
+    'Beban bunga tahun 1 = saldo awal × suku bunga pasar = €75.816 × 10% = €7.582.',
+    'Pokok yang dilunasi = €20.000 − €7.582 = €12.418.'
+  ],
+  journal: [
+    { title: 'Saat pembelian', rows: [['Equipment', '75.816', ''], ['Notes Payable', '', '75.816']] },
+    { title: 'Akhir tahun pertama', rows: [['Interest Expense', '7.582', ''], ['Notes Payable', '12.418', ''], ['Cash', '', '20.000']] }
+  ]
+},
+{
+  bab: 9, ref: 'LO 5 · Contoh Soal 5.1 · Pelepasan aset',
+  stem: 'Barret Group memiliki mesin seharga €18.000 yang disusutkan €1.200 per tahun selama 9 tahun penuh. Di pertengahan tahun ke-10, mesin dijual seharga €7.000.',
+  facts: [],
+  ask: 'Berapa laba atau rugi atas penjualan mesin?',
+  options: ['Rugi €200', 'Laba €400', 'Laba €1.000', 'Rugi €400'],
+  correct: 1,
+  wrong: [
+    'Hasil ini muncul jika penyusutan 6 bulan tahun ke-10 (€600) terlewat, sehingga nilai buku tampak €7.200.',
+    null,
+    'Nilai buku mesin bukan €6.000. Hitung akumulasi penyusutan sampai tanggal penjualan, termasuk €600.',
+    'Harga jual €7.000 lebih tinggi dari nilai buku €6.600, jadi hasilnya laba, bukan rugi.'
+  ],
+  steps: [
+    'Catat dulu penyusutan sampai tanggal penjualan: €1.200 × 6/12 = €600.',
+    'Akumulasi penyusutan = (€1.200 × 9) + €600 = €11.400. Nilai buku = €18.000 − €11.400 = €6.600.',
+    'Laba = harga jual €7.000 − nilai buku €6.600 = €400.'
+  ],
+  journal: [
+    { title: 'Penyusutan sampai tanggal penjualan', rows: [['Depreciation Expense', '600', ''], ['Accumulated Depreciation—Machinery', '', '600']] },
+    { title: 'Penjualan', rows: [
+      ['Cash', '7.000', ''], ['Accumulated Depreciation—Machinery', '11.400', ''],
+      ['Machinery', '', '18.000'], ['Gain on Disposal of Machinery', '', '400']
+    ]}
+  ]
+},
+/* ---------- BAB 10 ---------- */
+{
+  bab: 10, ref: 'LO 1 · Metode saldo menurun ganda (DDB)',
+  stem: 'Stanley Coal Mines membeli crane seharga $500.000 dengan masa manfaat 5 tahun dan nilai sisa $50.000. Perusahaan memakai metode saldo menurun ganda (DDB).',
+  facts: [],
+  ask: 'Berapa beban depresiasi tahun ke-5?',
+  options: ['$25.920', '$64.800', '$14.800', '$90.000'],
+  correct: 2,
+  wrong: [
+    '$25.920 = 40% × $64.800. Beban dibatasi agar nilai buku akhir tidak lebih rendah dari nilai sisa.',
+    '$64.800 adalah nilai buku awal tahun ke-5, bukan beban depresiasinya.',
+    null,
+    '$90.000 adalah beban garis lurus per tahun ($450.000 / 5), bukan DDB.'
+  ],
+  steps: [
+    'Tarif garis lurus = 100% / 5 = 20%, jadi tarif DDB = 40%. Tarif dikalikan nilai buku awal; nilai sisa tidak dikurangkan di awal.',
+    'Depresiasi berhenti ketika nilai buku mencapai nilai sisa $50.000.',
+    'Tahun 5: 40% × $64.800 = $25.920, tetapi maksimal hanya $64.800 − $50.000 = $14.800.'
+  ],
+  calc: [
+    ['Tahun 1: 40% × $500.000', '$200.000'], ['Tahun 2: 40% × $300.000', '$120.000'],
+    ['Tahun 3: 40% × $180.000', '$72.000'], ['Tahun 4: 40% × $108.000', '$43.200'],
+    ['Tahun 5: dibatasi sampai nilai sisa', '$14.800', 'total']
+  ]
+},
+{
+  bab: 10, ref: 'LO 2 · Soal 2.1 · Depresiasi komponen',
+  stem: 'EuroAsia Airlines membeli pesawat pada 1 Januari 2026 seharga €100.000.000 (nilai sisa €0) dan menyusutkan tiap komponen secara garis lurus:',
+  facts: [
+    'Rangka pesawat €60.000.000, masa manfaat 20 tahun',
+    'Mesin €32.000.000, masa manfaat 8 tahun',
+    'Komponen lainnya €8.000.000, masa manfaat 5 tahun'
+  ],
+  ask: 'Berapa beban depresiasi tahun 2026?',
+  options: ['€8.600.000', '€5.000.000', '€9.090.909', '€12.500.000'],
+  correct: 0,
+  wrong: [
+    null,
+    '€100.000.000 / 20 menyamakan seluruh pesawat dengan umur rangka. IFRS mewajibkan komponen signifikan disusutkan terpisah.',
+    'Ini memakai rata-rata masa manfaat 11 tahun untuk seluruh biaya. Itu bukan metode komponen.',
+    '€100.000.000 / 8 hanya memakai masa manfaat mesin untuk seluruh pesawat.'
+  ],
+  steps: [
+    'Setiap komponen yang biayanya signifikan disusutkan sendiri menurut masa manfaatnya.',
+    'Jumlahkan beban depresiasi ketiga komponen.'
+  ],
+  calc: [
+    ['Rangka: €60.000.000 / 20', '€3.000.000'], ['Mesin: €32.000.000 / 8', '€4.000.000'],
+    ['Lainnya: €8.000.000 / 5', '€1.600.000'], ['Total beban 2026', '€8.600.000', 'total']
+  ],
+  journal: [{ title: 'Ayat jurnal penyesuaian 31 Desember 2026', rows: [
+    ['Depreciation Expense', '8.600.000', ''], ['Accumulated Depreciation—Equipment', '', '8.600.000']
+  ]}]
+},
+{
+  bab: 10, ref: 'LO 2 · Soal 2.3 · Revisi estimasi',
+  stem: 'Nestlé membeli mesin seharga CHF 90.000 tanpa nilai sisa, estimasi umur 20 tahun, garis lurus (CHF 4.500 per tahun). Pada awal tahun ke-11, total masa manfaat direvisi menjadi 30 tahun.',
+  facts: [],
+  ask: 'Berapa beban depresiasi per tahun mulai tahun ke-11?',
+  options: ['CHF 4.500', 'CHF 3.000', 'CHF 1.500', 'CHF 2.250'],
+  correct: 3,
+  wrong: [
+    'Ini tarif lama. Revisi estimasi harus diterapkan mulai periode berjalan.',
+    'CHF 90.000 / 30 mengabaikan akumulasi penyusutan CHF 45.000 yang sudah diakui. Periode lalu tidak diubah.',
+    'CHF 45.000 / 30 keliru: sisa masa manfaat baru adalah 20 tahun (30 − 10), bukan 30.',
+    null
+  ],
+  steps: [
+    'Perubahan estimasi diperlakukan prospektif: laporan periode lalu tidak diubah.',
+    'Nilai buku akhir tahun ke-10 dibagi sisa masa manfaat baru.'
+  ],
+  calc: [
+    ['Akumulasi penyusutan: 10 × CHF 4.500', 'CHF 45.000'],
+    ['Nilai buku awal tahun ke-11: 90.000 − 45.000', 'CHF 45.000'],
+    ['Sisa masa manfaat baru: 30 − 10', '20 tahun'],
+    ['Depresiasi baru: 45.000 / 20', 'CHF 2.250', 'total']
+  ]
+},
+{
+  bab: 10, ref: 'LO 3 · Contoh Soal 3.3 · Impairment (Verma)',
+  stem: 'Pada akhir 2025 Verma Co. menguji mesin bernilai tercatat $200.000 dengan sisa manfaat 5 tahun. Tidak ada data nilai wajar pasar, sehingga dipakai value-in-use dengan diskonto 8%.',
+  facts: [
+    'Arus kas masuk $40.000 per tahun selama 5 tahun',
+    'Nilai sisa $10.000 di akhir tahun ke-5',
+    'PVF anuitas biasa (5; 8%) = 3,99271; PVF tunggal (5; 8%) = 0,68058'
+  ],
+  ask: 'Berapa rugi penurunan nilai yang diakui?',
+  options: ['$0', '$33.486', '$40.000', '$166.514'],
+  correct: 1,
+  wrong: [
+    'Nilai terpulihkan ($166.514) lebih kecil dari nilai tercatat ($200.000), jadi terjadi impairment.',
+    null,
+    '$40.000 hanya arus kas satu tahun. Rugi dihitung dari nilai tercatat dikurangi nilai terpulihkan.',
+    '$166.514 adalah value-in-use (nilai terpulihkan), bukan rugi impairment.'
+  ],
+  steps: [
+    'Karena tidak ada nilai wajar pasar, nilai terpulihkan = value-in-use = nilai sekarang arus kas masa depan.',
+    'Rugi impairment = nilai tercatat − nilai terpulihkan.'
+  ],
+  calc: [
+    ['PV arus kas: $40.000 × 3,99271', '$159.708'], ['PV nilai sisa: $10.000 × 0,68058', '$6.806'],
+    ['Value-in-use (nilai terpulihkan)', '$166.514', 'total'],
+    ['Nilai tercatat', '$200.000'],
+    ['Rugi impairment: 200.000 − 166.514', '$33.486', 'total']
+  ],
+  journal: [{ title: 'Ayat jurnal impairment', rows: [
+    ['Loss on Impairment', '33.486', ''], ['Accumulated Depreciation—Machinery', '', '33.486']
+  ]}]
+},
+{
+  bab: 10, ref: 'LO 5 · Model revaluasi (Unilever)',
+  stem: 'Unilever Group membeli tanah pada 1 Januari 2025 seharga €400.000. Nilai wajar tanah: €520.000 pada 31 Desember 2025 (kenaikan €120.000 sudah dicatat di OCI), dan turun menjadi €380.000 pada 31 Desember 2026.',
+  facts: [],
+  ask: 'Bagaimana penurunan €140.000 pada 2026 dicatat menurut IAS 16?',
+  options: [
+    'Seluruh €140.000 diakui sebagai rugi impairment di laba rugi',
+    'Seluruh €140.000 dikurangkan dari OCI',
+    '€120.000 menghapus saldo OCI dan €20.000 diakui sebagai rugi impairment di laba rugi',
+    '€20.000 dikurangkan dari OCI dan €120.000 diakui sebagai rugi di laba rugi'
+  ],
+  correct: 2,
+  wrong: [
+    'Surplus revaluasi di OCI (€120.000) harus dihapus lebih dulu, baru sisanya ke laba rugi.',
+    'Saldo OCI hanya €120.000, sehingga tidak bisa menyerap penurunan €140.000 seluruhnya.',
+    null,
+    'Urutannya terbalik. OCI dikurangi lebih dulu sampai habis, baru sisanya menjadi rugi.'
+  ],
+  steps: [
+    'Penurunan yang menghapus surplus revaluasi sebelumnya mengurangi OCI terlebih dahulu hingga habis.',
+    'Sisanya (€140.000 − €120.000 = €20.000) berada di bawah biaya historis €400.000, sehingga diakui sebagai rugi impairment di laba rugi.',
+    'Nilai wajar €380.000 lebih rendah €20.000 dari biaya historis €400.000, konsisten dengan rugi €20.000.'
+  ],
+  journal: [{ title: 'Ayat jurnal 31 Desember 2026', rows: [
+    ['Unrealized Gain on Revaluation—Land (OCI)', '120.000', ''], ['Loss on Impairment (laba rugi)', '20.000', ''], ['Land', '', '140.000']
+  ]}]
+},
+/* ---------- BAB 11 ---------- */
+{
+  bab: 11, ref: 'LO 1 · Contoh Soal 11.2 · Amortisasi dengan nilai sisa',
+  stem: 'U2D Co. memiliki merek dagang "RealSoap" seharga $400.000 dengan estimasi masa manfaat 10 tahun. Hadley Company, salah satu grosir, berkomitmen membeli merek tersebut seharga $160.000 pada akhir tahun ke-8.',
+  facts: [],
+  ask: 'Berapa beban amortisasi tahun pertama?',
+  options: ['$40.000', '$50.000', '$24.000', '$30.000'],
+  correct: 3,
+  wrong: [
+    '$400.000 / 10 mengabaikan komitmen pembelian Hadley, yang membuat masa manfaat 8 tahun dan ada nilai sisa.',
+    '$400.000 / 8 memakai masa manfaat yang benar tetapi lupa mengurangi nilai sisa $160.000.',
+    '$240.000 / 10 memakai dasar amortisasi yang benar, tetapi masa manfaatnya 8 tahun, bukan 10.',
+    null
+  ],
+  steps: [
+    'Ada pihak ketiga yang berkomitmen membeli di akhir tahun ke-8, sehingga masa manfaat yang dipakai 8 tahun dan nilai sisa $160.000.',
+    'Dasar amortisasi = $400.000 − $160.000 = $240.000.',
+    'Amortisasi tahun 1 = $240.000 / 8 = $30.000.'
+  ],
+  journal: [{ title: 'Ayat jurnal tahun pertama', rows: [['Amortization Expense', '30.000', ''], ['Brand (atau Accumulated Amortization)', '', '30.000']] }]
+},
+{
+  bab: 11, ref: 'LO 5 · Studi Kasus 11.12 · Biaya R&D (Next Century)',
+  stem: 'Next Century Inc. mengeluarkan beberapa jenis biaya terkait pengembangan alat laser baru.',
+  facts: [],
+  ask: 'Pengeluaran mana yang dikapitalisasi sebagai aset (Patents)?',
+  options: [
+    'Biaya hukum pendaftaran paten laser baru',
+    'Gaji staf riset yang merancang alat laser baru',
+    'Biaya pengujian prototipe dan modifikasi desain',
+    'Komisi staf penjualan'
+  ],
+  correct: 0,
+  wrong: [
+    null,
+    'Gaji staf riset adalah biaya riset dan dibiayakan langsung sebagai R&D Expense.',
+    'Prototipe dan pengujian belum mencapai kelayakan ekonomi, sehingga dibiayakan langsung.',
+    'Komisi penjualan adalah Beban Penjualan, bukan biaya R&D dan bukan aset.'
+  ],
+  steps: [
+    'Biaya riset selalu dibiayakan saat terjadi. Biaya pengembangan dikapitalisasi hanya jika kelayakan ekonomi terpenuhi.',
+    'Biaya hukum pendaftaran paten adalah biaya langsung perolehan paten, sehingga dikapitalisasi ke akun Patents dan diamortisasi.'
+  ]
+},
+{
+  bab: 11, ref: 'LO 3 · Contoh Soal 11.6 · Goodwill',
+  stem: 'Feng, Inc. membeli seluruh bisnis Tractorling SA seharga $400.000 tunai. Hasil penilaian nilai wajar oleh Feng:',
+  facts: [
+    'PPE (neto) $205.000; paten teridentifikasi baru $18.000',
+    'Persediaan $122.000; piutang usaha $35.000; kas $25.000',
+    'Liabilitas $55.000',
+    'Nilai buku aset neto Tractorling: $200.000 (aset $255.000 − liabilitas $55.000)'
+  ],
+  ask: 'Berapa goodwill yang dicatat Feng?',
+  options: ['$68.000', '$50.000', '$145.000', '$200.000'],
+  correct: 1,
+  wrong: [
+    'Hasil ini muncul jika paten baru $18.000 tidak dihitung. Paten teridentifikasi termasuk aset neto.',
+    null,
+    '$145.000 = $400.000 − total aset buku $255.000. Liabilitas harus dikurangkan dan aset memakai nilai wajar.',
+    '$200.000 memakai nilai buku aset neto. Goodwill dihitung dari nilai wajar aset neto teridentifikasi.'
+  ],
+  steps: [
+    'Goodwill = harga beli bisnis − nilai wajar aset neto teridentifikasi.',
+    'Aset dicatat pada nilai wajar, termasuk paten baru yang tidak ada di buku Tractorling.'
+  ],
+  calc: [
+    ['PPE + paten + persediaan + piutang + kas: 205 + 18 + 122 + 35 + 25', '$405.000'],
+    ['Dikurangi liabilitas', '($55.000)'],
+    ['Nilai wajar aset neto', '$350.000', 'total'],
+    ['Harga beli', '$400.000'],
+    ['Goodwill: 400.000 − 350.000', '$50.000', 'total']
+  ],
+  journal: [{ title: 'Ayat jurnal pembelian oleh Feng', rows: [
+    ['Property, Plant, and Equipment', '205.000', ''], ['Patents', '18.000', ''], ['Inventory', '122.000', ''],
+    ['Accounts Receivable', '35.000', ''], ['Cash', '25.000', ''], ['Goodwill', '50.000', ''],
+    ['Liabilities', '', '55.000'], ['Cash', '', '400.000']
+  ]}]
+},
+{
+  bab: 11, ref: 'LO 3 · Contoh Soal 11.7 · Bargain purchase',
+  stem: 'Crème Crust menjual bisnisnya karena masalah likuiditas. Aset berwujud dan tak berwujudnya bernilai wajar $900.000 dan liabilitasnya $100.000. Meltone Inc. membeli bisnis tersebut seharga $500.000 tunai.',
+  facts: [],
+  ask: 'Bagaimana Meltone melaporkan selisihnya?',
+  options: [
+    'Goodwill $300.000 di laporan posisi keuangan',
+    'Gain on Acquisition $400.000',
+    'Gain on Acquisition $300.000 di laporan laba rugi',
+    'Tidak ada gain; seluruh aset dicatat sebesar harga beli $500.000'
+  ],
+  correct: 2,
+  wrong: [
+    'Goodwill timbul jika harga beli lebih tinggi dari nilai wajar aset neto. Di sini harga beli lebih rendah.',
+    '$400.000 = $900.000 − $500.000 mengabaikan liabilitas $100.000 yang ikut diambil alih.',
+    null,
+    'Aset dan liabilitas yang diakuisisi tetap dicatat pada nilai wajar. Selisihnya diakui sebagai gain.'
+  ],
+  steps: [
+    'Nilai wajar aset neto = $900.000 − $100.000 = $800.000.',
+    'Harga beli $500.000 lebih kecil dari $800.000, sehingga ini bargain purchase.',
+    'Selisih $300.000 diakui sebagai Gain on Acquisition di laba rugi, pada bagian other revenues and gains.'
+  ],
+  journal: [{ title: 'Ayat jurnal pembelian', rows: [
+    ['Assets (berwujud dan tak berwujud)', '900.000', ''], ['Liabilities', '', '100.000'],
+    ['Cash', '', '500.000'], ['Gain on Acquisition', '', '300.000']
+  ]}]
+},
+{
+  bab: 11, ref: 'LO 4 · Contoh Soal 11.11 · Impairment goodwill',
+  stem: 'Kohlbuy AG menguji impairment Divisi Pritt (unit penghasil kas). Nilai tercatat aset neto divisi €2.400.000, termasuk goodwill akuisisi €900.000. Berdasarkan value-in-use, nilai terpulihkan divisi turun menjadi €1.900.000.',
+  facts: [],
+  ask: 'Manakah pernyataan yang benar?',
+  options: [
+    'Rugi €500.000; goodwill tersisa €400.000; rugi tidak boleh dipulihkan di masa depan',
+    'Rugi €500.000; goodwill tersisa €400.000; rugi boleh dipulihkan jika kondisi membaik',
+    'Rugi €900.000; seluruh goodwill dihapus',
+    'Tidak ada rugi, karena nilai terpulihkan €1.900.000 melebihi goodwill €900.000'
+  ],
+  correct: 0,
+  wrong: [
+    null,
+    'IFRS melarang pemulihan rugi impairment untuk goodwill.',
+    'Rugi hanya €500.000, lebih kecil dari goodwill €900.000, sehingga goodwill tidak habis.',
+    'Nilai terpulihkan dibandingkan dengan nilai tercatat aset neto unit (€2.400.000), bukan dengan goodwill saja.'
+  ],
+  steps: [
+    'Impairment terjadi jika nilai tercatat lebih besar dari nilai terpulihkan: €2.400.000 melebihi €1.900.000.',
+    'Rugi = €2.400.000 − €1.900.000 = €500.000, dikurangkan dari goodwill. Sisa goodwill = €900.000 − €500.000 = €400.000.',
+    'Rugi impairment goodwill tidak boleh dipulihkan di periode berikutnya.'
+  ],
+  journal: [{ title: 'Ayat jurnal impairment goodwill', rows: [['Loss on Impairment', '500.000', ''], ['Goodwill', '', '500.000']] }]
+},
+/* ---------- BAB 12 ---------- */
+{
+  bab: 12, ref: 'LO 1 · Contoh Soal 12.2 · Refinansiasi',
+  stem: 'Haddad Co. memiliki utang wesel €3.000.000 yang jatuh tempo 28 Februari 2026. Tanggal laporan keuangan 31 Desember 2025, dan laporan diotorisasi terbit 15 Maret 2026. Perjanjian refinancing selesai pada 15 Januari 2026. Pada 31 Desember 2025 Haddad belum memiliki hak tak bersyarat untuk menunda pelunasan.',
+  facts: [],
+  ask: 'Bagaimana klasifikasi utang tersebut pada 31 Desember 2025?',
+  options: [
+    'Liabilitas jangka panjang, karena refinancing selesai sebelum laporan diotorisasi',
+    'Dipecah: sebagian lancar, sebagian tidak lancar',
+    'Tidak disajikan di neraca, cukup diungkapkan dalam catatan',
+    'Liabilitas jangka pendek (current liability)'
+  ],
+  correct: 3,
+  wrong: [
+    'Klasifikasi ditentukan oleh hak dan kondisi pada tanggal pelaporan. Refinancing setelah tanggal itu tidak mengubahnya.',
+    'Tidak ada dasar untuk memecah; seluruh €3.000.000 jatuh tempo dalam 12 bulan dan belum ada hak menunda.',
+    'Utang wesel adalah liabilitas yang harus disajikan di laporan posisi keuangan.',
+    null
+  ],
+  steps: [
+    'Menurut IAS 1, klasifikasi didasarkan pada hak dan kondisi yang ada pada tanggal pelaporan (31 Desember 2025).',
+    'Refinancing yang diselesaikan 15 Januari 2026 terjadi setelah tanggal pelaporan, jadi utang tetap jangka pendek.',
+    'Jika refinancing selesai pada atau sebelum 31 Desember 2025, hak menunda sudah ada dan utang menjadi jangka panjang.'
+  ]
+},
+{
+  bab: 12, ref: 'LO 1 · Pajak Pertambahan Nilai (VAT)',
+  stem: 'Dalam rantai pasok roti, VAT 10% dipungut di setiap tahap:',
+  facts: [
+    'Hill Farms menjual gandum ke Sunshine Baking seharga €1.000 + VAT €100',
+    'Sunshine menjual roti ke Halo Supermarket seharga €2.000 + VAT €200'
+  ],
+  ask: 'Berapa VAT yang harus disetor Sunshine Baking ke kas negara?',
+  options: ['€200', '€100', '€300', '€240'],
+  correct: 1,
+  wrong: [
+    '€200 adalah VAT yang dipungut Sunshine. Input VAT €100 yang sudah dibayar ke Hill Farms harus dikurangkan.',
+    null,
+    'VAT keluaran dan VAT masukan dikurangkan, bukan dijumlahkan.',
+    '€240 adalah total VAT seluruh rantai (€100 + €100 + €40) yang akhirnya ditanggung konsumen.'
+  ],
+  steps: [
+    'Setoran = VAT yang dipungut dari pelanggan − VAT yang sudah dibayar ke pemasok (input VAT).',
+    'Sunshine memungut €200 dan sudah membayar €100 kepada Hill Farms, sehingga menyetor €100.'
+  ],
+  calc: [
+    ['VAT dipungut dari Halo', '€200'], ['Input VAT dibayar ke Hill Farms', '(€100)'], ['Disetor ke negara', '€100', 'total']
+  ],
+  journal: [
+    { title: 'Sunshine membeli gandum', rows: [['Inventory', '1.000', ''], ['VAT Receivable (input VAT)', '100', ''], ['Cash', '', '1.100']] },
+    { title: 'Sunshine menjual roti', rows: [['Cash', '2.200', ''], ['Sales Revenue', '', '2.000'], ['VAT Payable', '', '200']] }
+  ]
+},
+{
+  bab: 12, ref: 'LO 2 · Contoh Soal 12.6 · Garansi tipe jaminan',
+  stem: 'Pada 2025 Denson Machinery menjual 100 mesin secara tunai seharga $5.000 per unit dengan garansi 1 tahun. Estimasi biaya garansi $200 per unit ($20.000 total). Biaya garansi yang benar-benar terjadi: $4.000 pada 2025 dan $16.000 pada 2026.',
+  facts: [],
+  ask: 'Berapa total beban garansi 2025 dan saldo Warranty Liability pada 31 Desember 2025?',
+  options: [
+    'Beban $20.000; liabilitas $16.000',
+    'Beban $4.000; liabilitas $0',
+    'Beban $20.000; liabilitas $20.000',
+    'Beban $16.000; liabilitas $4.000'
+  ],
+  correct: 0,
+  wrong: [
+    null,
+    'Garansi tipe jaminan diakui pada periode penjualan, bukan saat klaim dibayar.',
+    'Liabilitas sudah berkurang karena klaim 2025 senilai $4.000 telah terjadi. Sisa liabilitas $16.000.',
+    'Seluruh estimasi $20.000 dibebankan di 2025, dan sisa liabilitas adalah klaim yang belum terjadi ($16.000).'
+  ],
+  steps: [
+    'Garansi tipe jaminan menjamin produk bebas cacat saat dijual. Biaya diakui sebagai beban pada periode penjualan (matching).',
+    'Beban 2025 = $4.000 (realisasi) + $16.000 (penyesuaian provisi) = $20.000.',
+    'Sisa provisi $16.000 menjadi Warranty Liability dan dilunasi dengan klaim 2026.'
+  ],
+  journal: [
+    { title: 'Realisasi garansi 2025', rows: [['Warranty Expense', '4.000', ''], ['Cash, Inventory, Accrued Payroll', '', '4.000']] },
+    { title: 'Penyesuaian 31 Desember 2025', rows: [['Warranty Expense', '16.000', ''], ['Warranty Liability', '', '16.000']] }
+  ]
+},
+{
+  bab: 12, ref: 'LO 2 · Provisi lingkungan (Wildcat Oil)',
+  stem: 'Pada 1 Januari 2025 Wildcat Oil mendirikan anjungan minyak yang wajib dibongkar secara hukum di akhir masa manfaatnya (5 tahun) dengan estimasi biaya $1.000.000. Suku bunga diskonto 10% dan PVF (n = 5, i = 10%) = 0,62092.',
+  facts: [],
+  ask: 'Berapa biaya anjungan (Drilling Platform) yang dicatat saat awal dan beban bunga tahun pertama?',
+  options: [
+    'Anjungan $1.000.000; beban bunga $100.000',
+    'Anjungan $1.000.000; beban bunga $62.092',
+    'Anjungan $620.920; beban bunga $62.092',
+    'Anjungan $620.920; beban bunga $124.184'
+  ],
+  correct: 2,
+  wrong: [
+    'Provisi diukur pada nilai sekarang, bukan nilai nominal masa depan.',
+    'Beban bunga benar, tetapi anjungan harus dicatat sebesar nilai sekarang liabilitas ($620.920).',
+    null,
+    '$124.184 adalah beban penyusutan tahunan ($620.920 / 5), bukan beban bunga.'
+  ],
+  steps: [
+    'Liabilitas pembongkaran diakui sebesar nilai sekarang: $1.000.000 × 0,62092 = $620.920. Jumlah yang sama menambah biaya aset.',
+    'Beban bunga (unwinding of discount) tahun 1 = $620.920 × 10% = $62.092, menambah saldo Environmental Liability.',
+    'Penyusutan tahunan garis lurus $620.920 / 5 = $124.184 dicatat terpisah.'
+  ],
+  journal: [
+    { title: '1 Januari 2025', rows: [['Drilling Platform', '620.920', ''], ['Environmental Liability', '', '620.920']] },
+    { title: '31 Desember 2025: bunga', rows: [['Interest Expense', '62.092', ''], ['Environmental Liability', '', '62.092']] },
+    { title: '31 Desember 2025: penyusutan', rows: [['Depreciation Expense', '124.184', ''], ['Accumulated Depreciation—Plant Assets', '', '124.184']] }
+  ]
+},
+{
+  bab: 12, ref: 'LO 2-3 · Contoh 12.5 · Gugatan hukum (Morrison)',
+  stem: 'Seorang karyawan menggugat Wm Morrison Supermarkets sebesar £1.000.000 atas cedera di pabrik. Pengacara Morrison menilai kemungkinan Morrison kalah di persidangan sekitar 30%, atau kurang dari 50%.',
+  facts: [],
+  ask: 'Bagaimana perlakuan akuntansi yang tepat?',
+  options: [
+    'Mengakui provisi £1.000.000 di laporan posisi keuangan',
+    'Tidak mengakui provisi; mengungkapkan sebagai liabilitas kontinjensi di catatan atas laporan keuangan',
+    'Tidak perlu mencatat maupun mengungkapkan apa pun',
+    'Mengakui provisi £300.000 (£1.000.000 × 30%)'
+  ],
+  correct: 1,
+  wrong: [
+    'Provisi hanya diakui jika arus keluar probabel (lebih mungkin daripada tidak, di atas 50%). Di sini tidak.',
+    null,
+    'Ketidakpastian ini masih possible (5%-50% menurut panduan buku). Pengungkapan tidak diperlukan hanya jika remote (di bawah 5%).',
+    'Untuk kewajiban tunggal, probabilitas tidak dipakai mengalikan jumlah. Provisi diakui penuh bila probabel, selain itu tidak.'
+  ],
+  steps: [
+    'Provisi diakui bila ada kewajiban kini, arus keluar probabel (di atas 50%), dan jumlah dapat diestimasi andal.',
+    'Kemungkinan kalah kurang dari 50% berarti arus keluar tidak probabel, sehingga tidak ada provisi.',
+    'Kasus ini cukup diungkapkan sebagai liabilitas kontinjensi dalam catatan atas laporan keuangan.'
+  ]
+}
+]; /*END_Q*/
+
+/* ===== STATE ===== */
+const KEY = 'akm2-latihan-bab9-12-v1';
+const N = Q.length;
+let state = { phase: 'intro', idx: 0, answers: Array(N).fill(null), confirm: false, filter: 'all' };
+
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify({ phase: state.phase, idx: state.idx, answers: state.answers })); } catch (e) {}
+}
+function load() {
+  try {
+    const raw = localStorage.getItem(KEY);
+    if (!raw) return;
+    const s = JSON.parse(raw);
+    if (s && Array.isArray(s.answers) && s.answers.length === N && (s.phase === 'quiz' || s.phase === 'result')) {
+      state.phase = s.phase;
+      state.idx = Math.min(Math.max(+s.idx || 0, 0), N - 1);
+      state.answers = s.answers.map(a => (a === 0 || a === 1 || a === 2 || a === 3) ? a : null);
+    }
+  } catch (e) {}
+}
+
+const app = document.getElementById('app');
+const L = ['A', 'B', 'C', 'D'];
+const answered = () => state.answers.filter(a => a !== null).length;
+const score = () => Q.reduce((s, q, i) => s + (state.answers[i] === q.correct ? 1 : 0), 0);
+
+/* ===== TEMA ===== */
+const themeBtn = document.getElementById('theme');
+const ICON_SUN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+const ICON_MOON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+function effectiveTheme() {
+  const t = document.documentElement.getAttribute('data-theme');
+  if (t === 'dark' || t === 'light') return t;
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+function paintThemeBtn() {
+  const dark = effectiveTheme() === 'dark';
+  themeBtn.innerHTML = (dark ? ICON_SUN : ICON_MOON) + '<span class="t-label">' + (dark ? 'Mode terang' : 'Mode gelap') + '</span>';
+  themeBtn.setAttribute('aria-label', dark ? 'Ganti ke mode terang' : 'Ganti ke mode gelap');
+}
+themeBtn.addEventListener('click', () => {
+  const next = effectiveTheme() === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  try { localStorage.setItem('akm2-theme', next); } catch (e) {}
+  paintThemeBtn();
+});
+try {
+  const t = localStorage.getItem('akm2-theme');
+  if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+} catch (e) {}
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', paintThemeBtn);
+paintThemeBtn();
+
+/* ===== RENDER ===== */
+function renderIntro() {
+  const rows = [9, 10, 11, 12].map(b => {
+    const n = Q.filter(q => q.bab === b).length;
+    const [code, name] = BAB[b].split(' · ');
+    return '<tr><td class="bab">' + code + '</td><td>' + name + '</td><td class="num mono">' + n + '</td></tr>';
+  }).join('');
+  const hasProgress = answered() > 0;
+  return '<section class="intro">' +
+    '<div style="display:grid;gap:12px">' +
+      '<p class="eyebrow">Latihan soal · IFRS</p>' +
+      '<h1>Latihan Akuntansi Keuangan Menengah II</h1>' +
+      '<p class="lede">20 soal pilihan ganda dari catatan Bab 9 sampai 12. Kerjakan semuanya dulu; benar atau salah dan pembahasan lengkap baru muncul setelah jawaban dikumpulkan.</p>' +
+    '</div>' +
+    '<div class="card table-scroll"><table class="ledger"><thead><tr><th>Bab</th><th>Topik</th><th class="num">Soal</th></tr></thead><tbody>' + rows +
+      '<tr><td></td><td>Total</td><td class="num mono">' + N + '</td></tr></tbody></table></div>' +
+    '<ul class="rules">' +
+      '<li><span class="k">1</span><span>Jawaban bisa diganti kapan saja sebelum dikumpulkan.</span></li>' +
+      '<li><span class="k">2</span><span>Tidak ada koreksi per soal. Hasil dan pembahasan terbuka setelah kamu menekan Kumpulkan.</span></li>' +
+      '<li><span class="k">3</span><span>Soal yang kosong dihitung salah. Semua angka mengikuti contoh soal di catatan.</span></li>' +
+    '</ul>' +
+    '<div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">' +
+      '<button class="btn" data-act="start" type="button">' + (hasProgress ? 'Lanjutkan latihan' : 'Mulai latihan') + '</button>' +
+    '</div>' +
+    '<p class="src">Sumber: Intermediate Accounting IFRS Edition, Kieso, Weygandt, Warfield (catatan belajar Bab 9-12).</p>' +
+  '</section>';
+}
+
+function navHTML() {
+  const groups = [9, 10, 11, 12].map(b => {
+    const cells = Q.map((q, i) => ({ q, i })).filter(o => o.q.bab === b).map(o => {
+      const cls = 'nav-cell' + (o.i === state.idx ? ' cur' : (state.answers[o.i] !== null ? ' done' : ''));
+      return '<button type="button" class="' + cls + '" data-act="go" data-i="' + o.i + '" aria-label="Soal ' + (o.i + 1) + (state.answers[o.i] !== null ? ', sudah dijawab' : ', belum dijawab') + '"' + (o.i === state.idx ? ' aria-current="true"' : '') + '>' + (o.i + 1) + '</button>';
+    }).join('');
+    return '<div class="nav-group"><h3>' + BAB[b].split(' · ')[0] + '</h3><div class="nav-row">' + cells + '</div></div>';
+  }).join('');
+  const a = answered();
+  return '<div class="prog-label"><span>Terjawab</span><span class="mono">' + a + ' / ' + N + '</span></div>' +
+    '<div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="' + N + '" aria-valuenow="' + a + '"><i style="width:' + (a / N * 100) + '%"></i></div>' +
+    groups +
+    '<button class="btn ghost" type="button" data-act="ask-submit">Kumpulkan jawaban</button>';
+}
+
+function factsHTML(q) {
+  return q.facts && q.facts.length ? '<ul class="facts">' + q.facts.map(f => '<li>' + f + '</li>').join('') + '</ul>' : '';
+}
+
+function renderQuiz() {
+  const q = Q[state.idx], i = state.idx, last = i === N - 1;
+  const opts = q.options.map((t, j) =>
+    '<label class="opt"><input type="radio" name="q' + i + '" value="' + j + '"' + (state.answers[i] === j ? ' checked' : '') + '>' +
+    '<span class="letter">' + L[j] + '</span><span class="opt-text">' + t + '</span></label>').join('');
+  return '<div class="quiz">' +
+    '<section class="card q-card" aria-labelledby="qt">' +
+      '<div class="q-meta"><span class="q-no" id="qt">Soal ' + (i + 1) + ' dari ' + N + '</span><span class="chip">' + BAB[q.bab].split(' · ')[0] + '</span><span>' + q.ref + '</span></div>' +
+      '<p class="stem">' + q.stem + '</p>' + factsHTML(q) +
+      '<p class="ask">' + q.ask + '</p>' +
+      '<fieldset class="opts" role="radiogroup" aria-label="Pilihan jawaban"><legend class="sr" style="position:absolute;left:-9999px">Pilihan jawaban</legend>' + opts + '</fieldset>' +
+      '<div class="q-nav">' +
+        '<button class="btn ghost" type="button" data-act="prev"' + (i === 0 ? ' disabled' : '') + '>Sebelumnya</button>' +
+        (last ? '<button class="btn" type="button" data-act="ask-submit">Periksa dan kumpulkan</button>'
+              : '<button class="btn" type="button" data-act="next">Berikutnya</button>') +
+      '</div>' +
+    '</section>' +
+    '<aside class="card aside" id="aside" aria-label="Navigasi soal">' + navHTML() + '</aside>' +
+  '</div>';
+}
+
+function renderConfirm() {
+  const blanks = state.answers.map((a, i) => a === null ? i : -1).filter(i => i >= 0);
+  const a = answered();
+  return '<section class="card confirm" style="max-width:640px;margin:0 auto">' +
+    '<h2>Kumpulkan jawaban?</h2>' +
+    '<p>Terjawab <b class="mono">' + a + ' dari ' + N + '</b> soal. Setelah dikumpulkan, jawaban tidak bisa diubah dan pembahasan terbuka.</p>' +
+    (blanks.length ? '<div><p style="margin-bottom:8px;color:var(--muted)">Soal yang masih kosong (dihitung salah):</p><div class="list">' +
+      blanks.map(i => '<button type="button" class="nav-cell" style="min-width:44px" data-act="go" data-i="' + i + '">' + (i + 1) + '</button>').join('') + '</div></div>' : '') +
+    '<div class="row"><button class="btn ghost" type="button" data-act="back">Kembali mengerjakan</button>' +
+    '<button class="btn" type="button" data-act="submit">Kumpulkan dan lihat hasil</button></div>' +
+  '</section>';
+}
+
+function calcHTML(q) {
+  if (!q.calc) return '';
+  return '<div><h3>Perhitungan</h3><div class="table-scroll"><table class="calc"><tbody>' +
+    q.calc.map(r => '<tr' + (r[2] === 'total' ? ' class="total"' : '') + '><td>' + r[0] + '</td><td>' + r[1] + '</td></tr>').join('') +
+    '</tbody></table></div></div>';
+}
+function journalHTML(q) {
+  if (!q.journal) return '';
+  return '<div><h3>Ayat jurnal</h3>' + q.journal.map(j =>
+    '<div style="margin-top:8px"><p class="jr-title">' + j.title + '</p><div class="table-scroll"><table class="journal"><thead><tr><th>Akun</th><th class="num">Debit</th><th class="num">Kredit</th></tr></thead><tbody>' +
+    j.rows.map(r => '<tr><td' + (r[1] === '' ? ' class="cr"' : '') + '>' + r[0] + '</td><td class="num">' + r[1] + '</td><td class="num">' + r[2] + '</td></tr>').join('') +
+    '</tbody></table></div></div>').join('') + '</div>';
+}
+
+function reviewItem(q, i) {
+  const a = state.answers[i];
+  const st = a === null ? 'blank' : (a === q.correct ? 'ok' : 'bad');
+  const chip = st === 'ok' ? '<span class="chip ok">Benar</span>' : st === 'bad' ? '<span class="chip bad">Salah</span>' : '<span class="chip blank">Tidak dijawab</span>';
+  const opts = q.options.map((t, j) => {
+    const isC = j === q.correct, isW = j === a && !isC;
+    let tag = '';
+    if (isC && a === j) tag = 'Jawabanmu · kunci jawaban';
+    else if (isC) tag = 'Kunci jawaban';
+    else if (isW) tag = 'Jawabanmu';
+    return '<div class="ropt' + (isC ? ' is-correct' : isW ? ' is-wrong' : '') + '"><span class="letter">' + L[j] + '</span><div class="body">' +
+      (tag ? '<span class="tag">' + tag + '</span>' : '') + '<span>' + t + '</span>' +
+      (!isC && q.wrong && q.wrong[j] ? '<span class="note">Kenapa salah: ' + q.wrong[j] + '</span>' : '') + '</div></div>';
+  }).join('');
+  return '<article class="card r-item" data-status="' + st + '">' +
+    '<div class="r-head"><div class="left"><span class="q-no">Soal ' + (i + 1) + '</span><span class="chip">' + BAB[q.bab].split(' · ')[0] + '</span><span>' + q.ref + '</span></div>' + chip + '</div>' +
+    '<p class="stem">' + q.stem + '</p>' + factsHTML(q) + '<p class="ask">' + q.ask + '</p>' +
+    '<div class="ropts">' + opts + '</div>' +
+    '<div class="sol"><div><h3>Pembahasan</h3><ol>' + q.steps.map(s => '<li>' + s + '</li>').join('') + '</ol></div>' + calcHTML(q) + journalHTML(q) + '</div>' +
+  '</article>';
+}
+
+function renderResult() {
+  const s = score(), pct = Math.round(s / N * 100);
+  const verdict = pct >= 85 ? 'Sangat baik' : pct >= 70 ? 'Baik' : pct >= 55 ? 'Cukup' : 'Perlu diulang';
+  const blank = N - answered();
+  const bd = [9, 10, 11, 12].map(b => {
+    const idxs = Q.map((q, i) => q.bab === b ? i : -1).filter(i => i >= 0);
+    const ok = idxs.filter(i => state.answers[i] === Q[i].correct).length;
+    return '<div class="bd-row"><span>' + BAB[b] + '</span><div class="bar"><i style="width:' + (ok / idxs.length * 100) + '%"></i></div><span class="val">' + ok + '/' + idxs.length + '</span></div>';
+  }).join('');
+  const wrongN = N - s;
+  const f = state.filter;
+  const items = Q.map((q, i) => ({ q, i })).filter(o => {
+    const ok = state.answers[o.i] === o.q.correct;
+    return f === 'all' || (f === 'ok' && ok) || (f === 'bad' && !ok);
+  }).map(o => reviewItem(o.q, o.i)).join('');
+  return '<div class="result">' +
+    '<section class="card score-card"><div class="score" aria-label="Skor ' + s + ' dari ' + N + '">' + s + '<small>/' + N + '</small></div>' +
+      '<div class="score-meta"><h2>' + verdict + ' · ' + pct + '%</h2><p style="color:var(--muted)">' + s + ' benar, ' + wrongN + ' salah' + (blank ? ' (' + blank + ' tidak dijawab)' : '') + '. Gulir ke bawah untuk melihat kunci jawaban dan pembahasan tiap soal.</p>' +
+      '<div><button class="btn ghost" type="button" data-act="retry">Ulangi latihan</button></div></div></section>' +
+    '<section class="card breakdown"><h3 style="font-size:18px">Hasil per bab</h3>' + bd + '</section>' +
+    '<div class="filters"><h2 style="font-size:22px">Review soal dan pembahasan</h2>' +
+      '<div class="seg" role="group" aria-label="Filter soal">' +
+        '<button type="button" data-act="filter" data-f="all" aria-pressed="' + (f === 'all') + '">Semua (' + N + ')</button>' +
+        '<button type="button" data-act="filter" data-f="bad" aria-pressed="' + (f === 'bad') + '">Salah (' + wrongN + ')</button>' +
+        '<button type="button" data-act="filter" data-f="ok" aria-pressed="' + (f === 'ok') + '">Benar (' + s + ')</button>' +
+      '</div></div>' +
+    '<div class="review">' + (items || '<p class="card" style="padding:24px;color:var(--muted)">Tidak ada soal pada filter ini.</p>') + '</div>' +
+    '<div class="again"><button class="btn" type="button" data-act="retry">Ulangi latihan</button><button class="btn ghost" type="button" data-act="top">Kembali ke atas</button></div>' +
+  '</div>';
+}
+
+function render() {
+  if (state.phase === 'intro') app.innerHTML = renderIntro();
+  else if (state.phase === 'quiz') app.innerHTML = state.confirm ? renderConfirm() : renderQuiz();
+  else app.innerHTML = renderResult();
+}
+function toTop() { window.scrollTo({ top: 0 }); }
+
+/* ===== EVENTS ===== */
+app.addEventListener('change', e => {
+  const r = e.target;
+  if (r && r.type === 'radio' && state.phase === 'quiz') {
+    state.answers[state.idx] = +r.value;
+    save();
+    const aside = document.getElementById('aside');
+    if (aside) aside.innerHTML = navHTML();
+  }
+});
+app.addEventListener('click', e => {
+  const t = e.target.closest('[data-act]');
+  if (!t) return;
+  const act = t.dataset.act;
+  if (act === 'start') { state.phase = 'quiz'; state.confirm = false; save(); render(); toTop(); }
+  else if (act === 'next') { if (state.idx < N - 1) { state.idx++; save(); render(); toTop(); } }
+  else if (act === 'prev') { if (state.idx > 0) { state.idx--; save(); render(); toTop(); } }
+  else if (act === 'go') { state.idx = +t.dataset.i; state.confirm = false; save(); render(); toTop(); }
+  else if (act === 'ask-submit') { state.confirm = true; render(); toTop(); }
+  else if (act === 'back') { state.confirm = false; render(); toTop(); }
+  else if (act === 'submit') { state.phase = 'result'; state.confirm = false; state.filter = 'all'; save(); render(); toTop(); }
+  else if (act === 'filter') { state.filter = t.dataset.f; render(); }
+  else if (act === 'retry') { state = { phase: 'quiz', idx: 0, answers: Array(N).fill(null), confirm: false, filter: 'all' }; save(); render(); toTop(); }
+  else if (act === 'top') { toTop(); }
+});
+
+load();
+render();
+</script>
+
+</body></html>
